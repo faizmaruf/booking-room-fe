@@ -11,9 +11,7 @@ export const fetchRoles = (limit = 100, page = 1) => {
     dispatch({ type: SET_ROLES_LOADING, status: true });
 
     try {
-      const response = await authorizedAxios.get(
-        "/roles?limit=" + limit + "&page=" + page
-      );
+      const response = await authorizedAxios.get("/roles?limit=" + limit + "&page=" + page);
 
       if (response.status === 200 || response.status === 201) {
         dispatch({
@@ -25,8 +23,7 @@ export const fetchRoles = (limit = 100, page = 1) => {
       console.error("error", error);
       dispatch({
         type: SET_ROLES_ERROR,
-        error:
-          error?.response?.data || "Terjadi kesalahan saat mengambil data.",
+        error: error?.response?.data || "Terjadi kesalahan saat mengambil data.",
       });
     } finally {
       dispatch({ type: SET_ROLES_LOADING, status: false });
@@ -51,8 +48,7 @@ export const getRoleById = (id) => {
       console.error("error", error);
       dispatch({
         type: SET_ROLES_ERROR,
-        error:
-          error?.response?.data || "Terjadi kesalahan saat mengambil data.",
+        error: error?.response?.data || "Terjadi kesalahan saat mengambil data.",
       });
     } finally {
       dispatch({ type: SET_ROLES_LOADING, status: false });
@@ -65,14 +61,11 @@ export const addRole = (data) => {
     dispatch({ type: SET_ROLES_LOADING, status: true });
 
     try {
-      const response = await showToast(
-        authorizedAxios.post(`${BASE_URL}/roles`, data),
-        {
-          loading: "Menyimpan data...",
-          success: "Data role berhasil ditambahkan!",
-          error: (err) => err?.message || "Gagal menyimpan data!",
-        }
-      );
+      const response = await showToast(authorizedAxios.post(`${BASE_URL}/roles`, data), {
+        loading: "Menyimpan data...",
+        success: "Data role berhasil ditambahkan!",
+        error: (err) => err?.message || "Gagal menyimpan data!",
+      });
       if (response.status === 200 || response.status === 201) {
         dispatch(fetchRoles());
       }
@@ -93,14 +86,35 @@ export const updateRole = (id, data) => {
     dispatch({ type: SET_ROLES_LOADING, status: true });
 
     try {
-      const response = await showToast(
-        authorizedAxios.put(`${BASE_URL}/roles/${id}`, data),
-        {
-          loading: "Mengupdate data...",
-          success: "Data role berhasil diupdate!",
-          error: (err) => err?.message || "Gagal mengupdate data!",
-        }
-      );
+      const response = await showToast(authorizedAxios.put(`${BASE_URL}/roles/${id}`, data), {
+        loading: "Mengupdate data...",
+        success: "Data role berhasil diupdate!",
+        error: (err) => err?.message || "Gagal mengupdate data!",
+      });
+      if (response.status === 200 || response.status === 201) {
+        dispatch(fetchRoles());
+      }
+    } catch (error) {
+      console.error("error", error);
+      dispatch({
+        type: SET_ROLES_ERROR,
+        error: error?.message || "Terjadi kesalahan.",
+      });
+    } finally {
+      dispatch({ type: SET_ROLES_LOADING, status: false });
+    }
+  };
+};
+export const updatePermissions = (id, data) => {
+  return async (dispatch) => {
+    dispatch({ type: SET_ROLES_LOADING, status: true });
+
+    try {
+      const response = await showToast(authorizedAxios.put(`${BASE_URL}/roles/${id}/role-permissions`, data), {
+        loading: "Mengupdate data...",
+        success: "Data role berhasil diupdate!",
+        error: (err) => err?.message || "Gagal mengupdate data!",
+      });
       if (response.status === 200 || response.status === 201) {
         dispatch(fetchRoles());
       }
@@ -121,14 +135,11 @@ export const deleteRole = (id) => {
     dispatch({ type: SET_ROLES_LOADING, status: true });
 
     try {
-      const response = await showToast(
-        authorizedAxios.delete(`${BASE_URL}/roles/${id}`),
-        {
-          loading: "Menghapus data...",
-          success: "Data role berhasil dihapus!",
-          error: (err) => err?.message || "Gagal menghapus data!",
-        }
-      );
+      const response = await showToast(authorizedAxios.delete(`${BASE_URL}/roles/${id}`), {
+        loading: "Menghapus data...",
+        success: "Data role berhasil dihapus!",
+        error: (err) => err?.message || "Gagal menghapus data!",
+      });
       if (response.status === 200 || response.status === 201) {
         dispatch(fetchRoles());
       }

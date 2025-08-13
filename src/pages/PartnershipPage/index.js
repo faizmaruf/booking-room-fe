@@ -21,48 +21,15 @@ const PartnershipPage = () => {
             </div>
             <div class="col-auto ms-auto d-print-none">
               <div class="btn-list">
-                <a
-                  href="#"
-                  class="btn btn-primary btn-5 d-none d-sm-inline-block"
-                  data-bs-toggle="modal"
-                  data-bs-target="#modal-report"
-                >
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="24"
-                    height="24"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    stroke-width="2"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    class="icon icon-2"
-                  >
+                <a href="#" class="btn btn-primary btn-5 d-none d-sm-inline-block" data-bs-toggle="modal" data-bs-target="#modal-report">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-2">
                     <path d="M12 5l0 14" />
                     <path d="M5 12l14 0" />
                   </svg>
                   Tambah partner
                 </a>
-                <a
-                  href="#"
-                  class="btn btn-primary btn-6 d-sm-none btn-icon"
-                  data-bs-toggle="modal"
-                  data-bs-target="#modal-report"
-                  aria-label="Create new report"
-                >
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="24"
-                    height="24"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    stroke-width="2"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    class="icon icon-2"
-                  >
+                <a href="#" class="btn btn-primary btn-6 d-sm-none btn-icon" data-bs-toggle="modal" data-bs-target="#modal-report" aria-label="Create new report">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-2">
                     <path d="M12 5l0 14" />
                     <path d="M5 12l14 0" />
                   </svg>
@@ -82,64 +49,31 @@ const PartnershipPage = () => {
                     <div class="row w-full">
                       <div class="col">
                         <h3 class="card-title mb-0">Partner</h3>
-                        <p class="text-secondary m-0">
-                          Partner yang bekerja sama dengan justforyou
-                        </p>
+                        <p class="text-secondary m-0">Partner yang bekerja sama dengan Booking Room</p>
                       </div>
                       <div class="col-md-auto col-sm-12">
                         <div class="ms-auto d-flex flex-wrap btn-list">
                           <div class="input-group input-group-flat w-auto">
                             <span class="input-group-text">
-                              <svg
-                                xmlns="http://www.w3.org/2000/svg"
-                                width="24"
-                                height="24"
-                                viewBox="0 0 24 24"
-                                fill="none"
-                                stroke="currentColor"
-                                stroke-width="2"
-                                stroke-linecap="round"
-                                stroke-linejoin="round"
-                                class="icon icon-1"
-                              >
+                              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-1">
                                 <path d="M10 10m-7 0a7 7 0 1 0 14 0a7 7 0 1 0 -14 0" />
                                 <path d="M21 21l-6 -6" />
                               </svg>
                             </span>
-                            <input
-                              id="advanced-table-search"
-                              type="text"
-                              class="form-control"
-                              autocomplete="off"
-                            />
+                            <input id="advanced-table-search" type="text" class="form-control" autocomplete="off" />
                             <span class="input-group-text">
                               <kbd>ctrl + K</kbd>
                             </span>
                           </div>
                           <a href="#" class="btn btn-icon" aria-label="Button">
-                            <svg
-                              xmlns="http://www.w3.org/2000/svg"
-                              width="24"
-                              height="24"
-                              viewBox="0 0 24 24"
-                              fill="none"
-                              stroke="currentColor"
-                              stroke-width="2"
-                              stroke-linecap="round"
-                              stroke-linejoin="round"
-                              class="icon icon-1"
-                            >
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-1">
                               <path d="M5 12m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0" />
                               <path d="M12 12m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0" />
                               <path d="M19 12m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0" />
                             </svg>
                           </a>
                           <div class="dropdown">
-                            <a
-                              href="#"
-                              class="btn dropdown-toggle"
-                              data-bs-toggle="dropdown"
-                            >
+                            <a href="#" class="btn dropdown-toggle" data-bs-toggle="dropdown">
                               Download
                             </a>
                             <div class="dropdown-menu">
@@ -169,50 +103,32 @@ const PartnershipPage = () => {
                           <tr>
                             <th class="w-1"></th>
                             <th>
-                              <button
-                                class="table-sort d-flex justify-content-between"
-                                data-sort="sort-name"
-                              >
+                              <button class="table-sort d-flex justify-content-between" data-sort="sort-name">
                                 Name
                               </button>
                             </th>
                             <th>
-                              <button
-                                class="table-sort d-flex justify-content-between"
-                                data-sort="sort-city"
-                              >
+                              <button class="table-sort d-flex justify-content-between" data-sort="sort-city">
                                 City
                               </button>
                             </th>
                             <th>
-                              <button
-                                class="table-sort d-flex justify-content-between"
-                                data-sort="sort-status"
-                              >
+                              <button class="table-sort d-flex justify-content-between" data-sort="sort-status">
                                 Status
                               </button>
                             </th>
                             <th>
-                              <button
-                                class="table-sort d-flex justify-content-between"
-                                data-sort="sort-date"
-                              >
+                              <button class="table-sort d-flex justify-content-between" data-sort="sort-date">
                                 Start date
                               </button>
                             </th>
                             <th>
-                              <button
-                                class="table-sort d-flex justify-content-between"
-                                data-sort="sort-tags"
-                              >
+                              <button class="table-sort d-flex justify-content-between" data-sort="sort-tags">
                                 Tags
                               </button>
                             </th>
                             <th>
-                              <button
-                                class="table-sort d-flex justify-content-between"
-                                data-sort="sort-category"
-                              >
+                              <button class="table-sort d-flex justify-content-between" data-sort="sort-category">
                                 Category
                               </button>
                             </th>
@@ -221,12 +137,7 @@ const PartnershipPage = () => {
                         <tbody class="table-tbody">
                           <tr>
                             <td>
-                              <input
-                                class="form-check-input m-0 align-middle table-selectable-check"
-                                type="checkbox"
-                                aria-label="Select invoice"
-                                value="true"
-                              />
+                              <input class="form-check-input m-0 align-middle table-selectable-check" type="checkbox" aria-label="Select invoice" value="true" />
                             </td>
                             <td class="sort-name">
                               <span class="avatar avatar-xs me-2"> </span>
@@ -247,23 +158,8 @@ const PartnershipPage = () => {
                               <span class="on-unchecked"> Individual </span>
                               <div class="on-checked">
                                 <div class="d-flex justify-content-end">
-                                  <a
-                                    href="#"
-                                    class="btn btn-2 btn-icon"
-                                    aria-label="Button"
-                                  >
-                                    <svg
-                                      xmlns="http://www.w3.org/2000/svg"
-                                      width="24"
-                                      height="24"
-                                      viewBox="0 0 24 24"
-                                      fill="none"
-                                      stroke="currentColor"
-                                      stroke-width="2"
-                                      stroke-linecap="round"
-                                      stroke-linejoin="round"
-                                      class="icon icon-2"
-                                    >
+                                  <a href="#" class="btn btn-2 btn-icon" aria-label="Button">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-2">
                                       <path d="M5 12m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0" />
                                       <path d="M12 12m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0" />
                                       <path d="M19 12m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0" />
@@ -275,12 +171,7 @@ const PartnershipPage = () => {
                           </tr>
                           <tr>
                             <td>
-                              <input
-                                class="form-check-input m-0 align-middle table-selectable-check"
-                                type="checkbox"
-                                aria-label="Select invoice"
-                                value="true"
-                              />
+                              <input class="form-check-input m-0 align-middle table-selectable-check" type="checkbox" aria-label="Select invoice" value="true" />
                             </td>
                             <td class="sort-name">
                               <span class="avatar avatar-xs me-2"> </span>
@@ -301,23 +192,8 @@ const PartnershipPage = () => {
                               <span class="on-unchecked"> Agencies </span>
                               <div class="on-checked">
                                 <div class="d-flex justify-content-end">
-                                  <a
-                                    href="#"
-                                    class="btn btn-2 btn-icon"
-                                    aria-label="Button"
-                                  >
-                                    <svg
-                                      xmlns="http://www.w3.org/2000/svg"
-                                      width="24"
-                                      height="24"
-                                      viewBox="0 0 24 24"
-                                      fill="none"
-                                      stroke="currentColor"
-                                      stroke-width="2"
-                                      stroke-linecap="round"
-                                      stroke-linejoin="round"
-                                      class="icon icon-2"
-                                    >
+                                  <a href="#" class="btn btn-2 btn-icon" aria-label="Button">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-2">
                                       <path d="M5 12m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0" />
                                       <path d="M12 12m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0" />
                                       <path d="M19 12m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0" />
@@ -329,12 +205,7 @@ const PartnershipPage = () => {
                           </tr>
                           <tr>
                             <td>
-                              <input
-                                class="form-check-input m-0 align-middle table-selectable-check"
-                                type="checkbox"
-                                aria-label="Select invoice"
-                                value="true"
-                              />
+                              <input class="form-check-input m-0 align-middle table-selectable-check" type="checkbox" aria-label="Select invoice" value="true" />
                             </td>
                             <td class="sort-name">
                               <span class="avatar avatar-xs me-2"> </span>
@@ -354,23 +225,8 @@ const PartnershipPage = () => {
                               <span class="on-unchecked"> Agencies </span>
                               <div class="on-checked">
                                 <div class="d-flex justify-content-end">
-                                  <a
-                                    href="#"
-                                    class="btn btn-2 btn-icon"
-                                    aria-label="Button"
-                                  >
-                                    <svg
-                                      xmlns="http://www.w3.org/2000/svg"
-                                      width="24"
-                                      height="24"
-                                      viewBox="0 0 24 24"
-                                      fill="none"
-                                      stroke="currentColor"
-                                      stroke-width="2"
-                                      stroke-linecap="round"
-                                      stroke-linejoin="round"
-                                      class="icon icon-2"
-                                    >
+                                  <a href="#" class="btn btn-2 btn-icon" aria-label="Button">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-2">
                                       <path d="M5 12m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0" />
                                       <path d="M12 12m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0" />
                                       <path d="M19 12m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0" />
@@ -382,12 +238,7 @@ const PartnershipPage = () => {
                           </tr>
                           <tr>
                             <td>
-                              <input
-                                class="form-check-input m-0 align-middle table-selectable-check"
-                                type="checkbox"
-                                aria-label="Select invoice"
-                                value="true"
-                              />
+                              <input class="form-check-input m-0 align-middle table-selectable-check" type="checkbox" aria-label="Select invoice" value="true" />
                             </td>
                             <td class="sort-name">
                               <span class="avatar avatar-xs me-2"> </span>
@@ -410,23 +261,8 @@ const PartnershipPage = () => {
                               <span class="on-unchecked"> Ticket </span>
                               <div class="on-checked">
                                 <div class="d-flex justify-content-end">
-                                  <a
-                                    href="#"
-                                    class="btn btn-2 btn-icon"
-                                    aria-label="Button"
-                                  >
-                                    <svg
-                                      xmlns="http://www.w3.org/2000/svg"
-                                      width="24"
-                                      height="24"
-                                      viewBox="0 0 24 24"
-                                      fill="none"
-                                      stroke="currentColor"
-                                      stroke-width="2"
-                                      stroke-linecap="round"
-                                      stroke-linejoin="round"
-                                      class="icon icon-2"
-                                    >
+                                  <a href="#" class="btn btn-2 btn-icon" aria-label="Button">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-2">
                                       <path d="M5 12m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0" />
                                       <path d="M12 12m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0" />
                                       <path d="M19 12m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0" />
@@ -438,12 +274,7 @@ const PartnershipPage = () => {
                           </tr>
                           <tr>
                             <td>
-                              <input
-                                class="form-check-input m-0 align-middle table-selectable-check"
-                                type="checkbox"
-                                aria-label="Select invoice"
-                                value="true"
-                              />
+                              <input class="form-check-input m-0 align-middle table-selectable-check" type="checkbox" aria-label="Select invoice" value="true" />
                             </td>
                             <td class="sort-name">
                               <span class="avatar avatar-xs me-2"> </span>
@@ -466,23 +297,8 @@ const PartnershipPage = () => {
                               <span class="on-unchecked"> Agencies </span>
                               <div class="on-checked">
                                 <div class="d-flex justify-content-end">
-                                  <a
-                                    href="#"
-                                    class="btn btn-2 btn-icon"
-                                    aria-label="Button"
-                                  >
-                                    <svg
-                                      xmlns="http://www.w3.org/2000/svg"
-                                      width="24"
-                                      height="24"
-                                      viewBox="0 0 24 24"
-                                      fill="none"
-                                      stroke="currentColor"
-                                      stroke-width="2"
-                                      stroke-linecap="round"
-                                      stroke-linejoin="round"
-                                      class="icon icon-2"
-                                    >
+                                  <a href="#" class="btn btn-2 btn-icon" aria-label="Button">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-2">
                                       <path d="M5 12m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0" />
                                       <path d="M12 12m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0" />
                                       <path d="M19 12m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0" />
@@ -494,12 +310,7 @@ const PartnershipPage = () => {
                           </tr>
                           <tr>
                             <td>
-                              <input
-                                class="form-check-input m-0 align-middle table-selectable-check"
-                                type="checkbox"
-                                aria-label="Select invoice"
-                                value="true"
-                              />
+                              <input class="form-check-input m-0 align-middle table-selectable-check" type="checkbox" aria-label="Select invoice" value="true" />
                             </td>
                             <td class="sort-name">
                               <span class="avatar avatar-xs me-2"> </span>
@@ -520,23 +331,8 @@ const PartnershipPage = () => {
                               <span class="on-unchecked"> Individual </span>
                               <div class="on-checked">
                                 <div class="d-flex justify-content-end">
-                                  <a
-                                    href="#"
-                                    class="btn btn-2 btn-icon"
-                                    aria-label="Button"
-                                  >
-                                    <svg
-                                      xmlns="http://www.w3.org/2000/svg"
-                                      width="24"
-                                      height="24"
-                                      viewBox="0 0 24 24"
-                                      fill="none"
-                                      stroke="currentColor"
-                                      stroke-width="2"
-                                      stroke-linecap="round"
-                                      stroke-linejoin="round"
-                                      class="icon icon-2"
-                                    >
+                                  <a href="#" class="btn btn-2 btn-icon" aria-label="Button">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-2">
                                       <path d="M5 12m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0" />
                                       <path d="M12 12m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0" />
                                       <path d="M19 12m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0" />
@@ -548,12 +344,7 @@ const PartnershipPage = () => {
                           </tr>
                           <tr>
                             <td>
-                              <input
-                                class="form-check-input m-0 align-middle table-selectable-check"
-                                type="checkbox"
-                                aria-label="Select invoice"
-                                value="true"
-                              />
+                              <input class="form-check-input m-0 align-middle table-selectable-check" type="checkbox" aria-label="Select invoice" value="true" />
                             </td>
                             <td class="sort-name">
                               <span class="avatar avatar-xs me-2"> </span>
@@ -576,23 +367,8 @@ const PartnershipPage = () => {
                               <span class="on-unchecked"> Event </span>
                               <div class="on-checked">
                                 <div class="d-flex justify-content-end">
-                                  <a
-                                    href="#"
-                                    class="btn btn-2 btn-icon"
-                                    aria-label="Button"
-                                  >
-                                    <svg
-                                      xmlns="http://www.w3.org/2000/svg"
-                                      width="24"
-                                      height="24"
-                                      viewBox="0 0 24 24"
-                                      fill="none"
-                                      stroke="currentColor"
-                                      stroke-width="2"
-                                      stroke-linecap="round"
-                                      stroke-linejoin="round"
-                                      class="icon icon-2"
-                                    >
+                                  <a href="#" class="btn btn-2 btn-icon" aria-label="Button">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-2">
                                       <path d="M5 12m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0" />
                                       <path d="M12 12m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0" />
                                       <path d="M19 12m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0" />
@@ -604,12 +380,7 @@ const PartnershipPage = () => {
                           </tr>
                           <tr>
                             <td>
-                              <input
-                                class="form-check-input m-0 align-middle table-selectable-check"
-                                type="checkbox"
-                                aria-label="Select invoice"
-                                value="true"
-                              />
+                              <input class="form-check-input m-0 align-middle table-selectable-check" type="checkbox" aria-label="Select invoice" value="true" />
                             </td>
                             <td class="sort-name">
                               <span class="avatar avatar-xs me-2"> </span>
@@ -630,23 +401,8 @@ const PartnershipPage = () => {
                               <span class="on-unchecked"> Ticket </span>
                               <div class="on-checked">
                                 <div class="d-flex justify-content-end">
-                                  <a
-                                    href="#"
-                                    class="btn btn-2 btn-icon"
-                                    aria-label="Button"
-                                  >
-                                    <svg
-                                      xmlns="http://www.w3.org/2000/svg"
-                                      width="24"
-                                      height="24"
-                                      viewBox="0 0 24 24"
-                                      fill="none"
-                                      stroke="currentColor"
-                                      stroke-width="2"
-                                      stroke-linecap="round"
-                                      stroke-linejoin="round"
-                                      class="icon icon-2"
-                                    >
+                                  <a href="#" class="btn btn-2 btn-icon" aria-label="Button">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-2">
                                       <path d="M5 12m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0" />
                                       <path d="M12 12m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0" />
                                       <path d="M19 12m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0" />
@@ -658,12 +414,7 @@ const PartnershipPage = () => {
                           </tr>
                           <tr>
                             <td>
-                              <input
-                                class="form-check-input m-0 align-middle table-selectable-check"
-                                type="checkbox"
-                                aria-label="Select invoice"
-                                value="true"
-                              />
+                              <input class="form-check-input m-0 align-middle table-selectable-check" type="checkbox" aria-label="Select invoice" value="true" />
                             </td>
                             <td class="sort-name">
                               <span class="avatar avatar-xs me-2"> </span>
@@ -684,23 +435,8 @@ const PartnershipPage = () => {
                               <span class="on-unchecked"> Agencies </span>
                               <div class="on-checked">
                                 <div class="d-flex justify-content-end">
-                                  <a
-                                    href="#"
-                                    class="btn btn-2 btn-icon"
-                                    aria-label="Button"
-                                  >
-                                    <svg
-                                      xmlns="http://www.w3.org/2000/svg"
-                                      width="24"
-                                      height="24"
-                                      viewBox="0 0 24 24"
-                                      fill="none"
-                                      stroke="currentColor"
-                                      stroke-width="2"
-                                      stroke-linecap="round"
-                                      stroke-linejoin="round"
-                                      class="icon icon-2"
-                                    >
+                                  <a href="#" class="btn btn-2 btn-icon" aria-label="Button">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-2">
                                       <path d="M5 12m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0" />
                                       <path d="M12 12m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0" />
                                       <path d="M19 12m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0" />
@@ -712,12 +448,7 @@ const PartnershipPage = () => {
                           </tr>
                           <tr>
                             <td>
-                              <input
-                                class="form-check-input m-0 align-middle table-selectable-check"
-                                type="checkbox"
-                                aria-label="Select invoice"
-                                value="true"
-                              />
+                              <input class="form-check-input m-0 align-middle table-selectable-check" type="checkbox" aria-label="Select invoice" value="true" />
                             </td>
                             <td class="sort-name">
                               <span class="avatar avatar-xs me-2"> </span>
@@ -738,23 +469,8 @@ const PartnershipPage = () => {
                               <span class="on-unchecked"> Agencies </span>
                               <div class="on-checked">
                                 <div class="d-flex justify-content-end">
-                                  <a
-                                    href="#"
-                                    class="btn btn-2 btn-icon"
-                                    aria-label="Button"
-                                  >
-                                    <svg
-                                      xmlns="http://www.w3.org/2000/svg"
-                                      width="24"
-                                      height="24"
-                                      viewBox="0 0 24 24"
-                                      fill="none"
-                                      stroke="currentColor"
-                                      stroke-width="2"
-                                      stroke-linecap="round"
-                                      stroke-linejoin="round"
-                                      class="icon icon-2"
-                                    >
+                                  <a href="#" class="btn btn-2 btn-icon" aria-label="Button">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-2">
                                       <path d="M5 12m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0" />
                                       <path d="M12 12m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0" />
                                       <path d="M19 12m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0" />
@@ -766,12 +482,7 @@ const PartnershipPage = () => {
                           </tr>
                           <tr>
                             <td>
-                              <input
-                                class="form-check-input m-0 align-middle table-selectable-check"
-                                type="checkbox"
-                                aria-label="Select invoice"
-                                value="true"
-                              />
+                              <input class="form-check-input m-0 align-middle table-selectable-check" type="checkbox" aria-label="Select invoice" value="true" />
                             </td>
                             <td class="sort-name">
                               <span class="avatar avatar-xs me-2"> </span>
@@ -791,23 +502,8 @@ const PartnershipPage = () => {
                               <span class="on-unchecked"> Individual </span>
                               <div class="on-checked">
                                 <div class="d-flex justify-content-end">
-                                  <a
-                                    href="#"
-                                    class="btn btn-2 btn-icon"
-                                    aria-label="Button"
-                                  >
-                                    <svg
-                                      xmlns="http://www.w3.org/2000/svg"
-                                      width="24"
-                                      height="24"
-                                      viewBox="0 0 24 24"
-                                      fill="none"
-                                      stroke="currentColor"
-                                      stroke-width="2"
-                                      stroke-linecap="round"
-                                      stroke-linejoin="round"
-                                      class="icon icon-2"
-                                    >
+                                  <a href="#" class="btn btn-2 btn-icon" aria-label="Button">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-2">
                                       <path d="M5 12m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0" />
                                       <path d="M12 12m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0" />
                                       <path d="M19 12m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0" />
@@ -819,12 +515,7 @@ const PartnershipPage = () => {
                           </tr>
                           <tr>
                             <td>
-                              <input
-                                class="form-check-input m-0 align-middle table-selectable-check"
-                                type="checkbox"
-                                aria-label="Select invoice"
-                                value="true"
-                              />
+                              <input class="form-check-input m-0 align-middle table-selectable-check" type="checkbox" aria-label="Select invoice" value="true" />
                             </td>
                             <td class="sort-name">
                               <span class="avatar avatar-xs me-2"> </span>
@@ -847,23 +538,8 @@ const PartnershipPage = () => {
                               <span class="on-unchecked"> Agencies </span>
                               <div class="on-checked">
                                 <div class="d-flex justify-content-end">
-                                  <a
-                                    href="#"
-                                    class="btn btn-2 btn-icon"
-                                    aria-label="Button"
-                                  >
-                                    <svg
-                                      xmlns="http://www.w3.org/2000/svg"
-                                      width="24"
-                                      height="24"
-                                      viewBox="0 0 24 24"
-                                      fill="none"
-                                      stroke="currentColor"
-                                      stroke-width="2"
-                                      stroke-linecap="round"
-                                      stroke-linejoin="round"
-                                      class="icon icon-2"
-                                    >
+                                  <a href="#" class="btn btn-2 btn-icon" aria-label="Button">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-2">
                                       <path d="M5 12m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0" />
                                       <path d="M12 12m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0" />
                                       <path d="M19 12m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0" />
@@ -875,12 +551,7 @@ const PartnershipPage = () => {
                           </tr>
                           <tr>
                             <td>
-                              <input
-                                class="form-check-input m-0 align-middle table-selectable-check"
-                                type="checkbox"
-                                aria-label="Select invoice"
-                                value="true"
-                              />
+                              <input class="form-check-input m-0 align-middle table-selectable-check" type="checkbox" aria-label="Select invoice" value="true" />
                             </td>
                             <td class="sort-name">
                               <span class="avatar avatar-xs me-2"> </span>
@@ -901,23 +572,8 @@ const PartnershipPage = () => {
                               <span class="on-unchecked"> Individual </span>
                               <div class="on-checked">
                                 <div class="d-flex justify-content-end">
-                                  <a
-                                    href="#"
-                                    class="btn btn-2 btn-icon"
-                                    aria-label="Button"
-                                  >
-                                    <svg
-                                      xmlns="http://www.w3.org/2000/svg"
-                                      width="24"
-                                      height="24"
-                                      viewBox="0 0 24 24"
-                                      fill="none"
-                                      stroke="currentColor"
-                                      stroke-width="2"
-                                      stroke-linecap="round"
-                                      stroke-linejoin="round"
-                                      class="icon icon-2"
-                                    >
+                                  <a href="#" class="btn btn-2 btn-icon" aria-label="Button">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-2">
                                       <path d="M5 12m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0" />
                                       <path d="M12 12m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0" />
                                       <path d="M19 12m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0" />
@@ -929,12 +585,7 @@ const PartnershipPage = () => {
                           </tr>
                           <tr>
                             <td>
-                              <input
-                                class="form-check-input m-0 align-middle table-selectable-check"
-                                type="checkbox"
-                                aria-label="Select invoice"
-                                value="true"
-                              />
+                              <input class="form-check-input m-0 align-middle table-selectable-check" type="checkbox" aria-label="Select invoice" value="true" />
                             </td>
                             <td class="sort-name">
                               <span class="avatar avatar-xs me-2"> SA </span>
@@ -957,23 +608,8 @@ const PartnershipPage = () => {
                               <span class="on-unchecked"> Event </span>
                               <div class="on-checked">
                                 <div class="d-flex justify-content-end">
-                                  <a
-                                    href="#"
-                                    class="btn btn-2 btn-icon"
-                                    aria-label="Button"
-                                  >
-                                    <svg
-                                      xmlns="http://www.w3.org/2000/svg"
-                                      width="24"
-                                      height="24"
-                                      viewBox="0 0 24 24"
-                                      fill="none"
-                                      stroke="currentColor"
-                                      stroke-width="2"
-                                      stroke-linecap="round"
-                                      stroke-linejoin="round"
-                                      class="icon icon-2"
-                                    >
+                                  <a href="#" class="btn btn-2 btn-icon" aria-label="Button">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-2">
                                       <path d="M5 12m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0" />
                                       <path d="M12 12m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0" />
                                       <path d="M19 12m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0" />
@@ -985,12 +621,7 @@ const PartnershipPage = () => {
                           </tr>
                           <tr>
                             <td>
-                              <input
-                                class="form-check-input m-0 align-middle table-selectable-check"
-                                type="checkbox"
-                                aria-label="Select invoice"
-                                value="true"
-                              />
+                              <input class="form-check-input m-0 align-middle table-selectable-check" type="checkbox" aria-label="Select invoice" value="true" />
                             </td>
                             <td class="sort-name">
                               <span class="avatar avatar-xs me-2"> </span>
@@ -1013,23 +644,8 @@ const PartnershipPage = () => {
                               <span class="on-unchecked"> Event </span>
                               <div class="on-checked">
                                 <div class="d-flex justify-content-end">
-                                  <a
-                                    href="#"
-                                    class="btn btn-2 btn-icon"
-                                    aria-label="Button"
-                                  >
-                                    <svg
-                                      xmlns="http://www.w3.org/2000/svg"
-                                      width="24"
-                                      height="24"
-                                      viewBox="0 0 24 24"
-                                      fill="none"
-                                      stroke="currentColor"
-                                      stroke-width="2"
-                                      stroke-linecap="round"
-                                      stroke-linejoin="round"
-                                      class="icon icon-2"
-                                    >
+                                  <a href="#" class="btn btn-2 btn-icon" aria-label="Button">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-2">
                                       <path d="M5 12m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0" />
                                       <path d="M12 12m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0" />
                                       <path d="M19 12m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0" />
@@ -1041,12 +657,7 @@ const PartnershipPage = () => {
                           </tr>
                           <tr>
                             <td>
-                              <input
-                                class="form-check-input m-0 align-middle table-selectable-check"
-                                type="checkbox"
-                                aria-label="Select invoice"
-                                value="true"
-                              />
+                              <input class="form-check-input m-0 align-middle table-selectable-check" type="checkbox" aria-label="Select invoice" value="true" />
                             </td>
                             <td class="sort-name">
                               <span class="avatar avatar-xs me-2"> </span>
@@ -1067,23 +678,8 @@ const PartnershipPage = () => {
                               <span class="on-unchecked"> Ticket </span>
                               <div class="on-checked">
                                 <div class="d-flex justify-content-end">
-                                  <a
-                                    href="#"
-                                    class="btn btn-2 btn-icon"
-                                    aria-label="Button"
-                                  >
-                                    <svg
-                                      xmlns="http://www.w3.org/2000/svg"
-                                      width="24"
-                                      height="24"
-                                      viewBox="0 0 24 24"
-                                      fill="none"
-                                      stroke="currentColor"
-                                      stroke-width="2"
-                                      stroke-linecap="round"
-                                      stroke-linejoin="round"
-                                      class="icon icon-2"
-                                    >
+                                  <a href="#" class="btn btn-2 btn-icon" aria-label="Button">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-2">
                                       <path d="M5 12m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0" />
                                       <path d="M12 12m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0" />
                                       <path d="M19 12m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0" />
@@ -1095,12 +691,7 @@ const PartnershipPage = () => {
                           </tr>
                           <tr>
                             <td>
-                              <input
-                                class="form-check-input m-0 align-middle table-selectable-check"
-                                type="checkbox"
-                                aria-label="Select invoice"
-                                value="true"
-                              />
+                              <input class="form-check-input m-0 align-middle table-selectable-check" type="checkbox" aria-label="Select invoice" value="true" />
                             </td>
                             <td class="sort-name">
                               <span class="avatar avatar-xs me-2"> </span>
@@ -1123,23 +714,8 @@ const PartnershipPage = () => {
                               <span class="on-unchecked"> Agencies </span>
                               <div class="on-checked">
                                 <div class="d-flex justify-content-end">
-                                  <a
-                                    href="#"
-                                    class="btn btn-2 btn-icon"
-                                    aria-label="Button"
-                                  >
-                                    <svg
-                                      xmlns="http://www.w3.org/2000/svg"
-                                      width="24"
-                                      height="24"
-                                      viewBox="0 0 24 24"
-                                      fill="none"
-                                      stroke="currentColor"
-                                      stroke-width="2"
-                                      stroke-linecap="round"
-                                      stroke-linejoin="round"
-                                      class="icon icon-2"
-                                    >
+                                  <a href="#" class="btn btn-2 btn-icon" aria-label="Button">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-2">
                                       <path d="M5 12m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0" />
                                       <path d="M12 12m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0" />
                                       <path d="M19 12m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0" />
@@ -1151,12 +727,7 @@ const PartnershipPage = () => {
                           </tr>
                           <tr>
                             <td>
-                              <input
-                                class="form-check-input m-0 align-middle table-selectable-check"
-                                type="checkbox"
-                                aria-label="Select invoice"
-                                value="true"
-                              />
+                              <input class="form-check-input m-0 align-middle table-selectable-check" type="checkbox" aria-label="Select invoice" value="true" />
                             </td>
                             <td class="sort-name">
                               <span class="avatar avatar-xs me-2"> </span>
@@ -1179,23 +750,8 @@ const PartnershipPage = () => {
                               <span class="on-unchecked"> Event </span>
                               <div class="on-checked">
                                 <div class="d-flex justify-content-end">
-                                  <a
-                                    href="#"
-                                    class="btn btn-2 btn-icon"
-                                    aria-label="Button"
-                                  >
-                                    <svg
-                                      xmlns="http://www.w3.org/2000/svg"
-                                      width="24"
-                                      height="24"
-                                      viewBox="0 0 24 24"
-                                      fill="none"
-                                      stroke="currentColor"
-                                      stroke-width="2"
-                                      stroke-linecap="round"
-                                      stroke-linejoin="round"
-                                      class="icon icon-2"
-                                    >
+                                  <a href="#" class="btn btn-2 btn-icon" aria-label="Button">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-2">
                                       <path d="M5 12m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0" />
                                       <path d="M12 12m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0" />
                                       <path d="M19 12m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0" />
@@ -1207,12 +763,7 @@ const PartnershipPage = () => {
                           </tr>
                           <tr>
                             <td>
-                              <input
-                                class="form-check-input m-0 align-middle table-selectable-check"
-                                type="checkbox"
-                                aria-label="Select invoice"
-                                value="true"
-                              />
+                              <input class="form-check-input m-0 align-middle table-selectable-check" type="checkbox" aria-label="Select invoice" value="true" />
                             </td>
                             <td class="sort-name">
                               <span class="avatar avatar-xs me-2"> AA </span>
@@ -1233,23 +784,8 @@ const PartnershipPage = () => {
                               <span class="on-unchecked"> Agencies </span>
                               <div class="on-checked">
                                 <div class="d-flex justify-content-end">
-                                  <a
-                                    href="#"
-                                    class="btn btn-2 btn-icon"
-                                    aria-label="Button"
-                                  >
-                                    <svg
-                                      xmlns="http://www.w3.org/2000/svg"
-                                      width="24"
-                                      height="24"
-                                      viewBox="0 0 24 24"
-                                      fill="none"
-                                      stroke="currentColor"
-                                      stroke-width="2"
-                                      stroke-linecap="round"
-                                      stroke-linejoin="round"
-                                      class="icon icon-2"
-                                    >
+                                  <a href="#" class="btn btn-2 btn-icon" aria-label="Button">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-2">
                                       <path d="M5 12m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0" />
                                       <path d="M12 12m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0" />
                                       <path d="M19 12m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0" />
@@ -1261,12 +797,7 @@ const PartnershipPage = () => {
                           </tr>
                           <tr>
                             <td>
-                              <input
-                                class="form-check-input m-0 align-middle table-selectable-check"
-                                type="checkbox"
-                                aria-label="Select invoice"
-                                value="true"
-                              />
+                              <input class="form-check-input m-0 align-middle table-selectable-check" type="checkbox" aria-label="Select invoice" value="true" />
                             </td>
                             <td class="sort-name">
                               <span class="avatar avatar-xs me-2"> </span>
@@ -1287,23 +818,8 @@ const PartnershipPage = () => {
                               <span class="on-unchecked"> Agencies </span>
                               <div class="on-checked">
                                 <div class="d-flex justify-content-end">
-                                  <a
-                                    href="#"
-                                    class="btn btn-2 btn-icon"
-                                    aria-label="Button"
-                                  >
-                                    <svg
-                                      xmlns="http://www.w3.org/2000/svg"
-                                      width="24"
-                                      height="24"
-                                      viewBox="0 0 24 24"
-                                      fill="none"
-                                      stroke="currentColor"
-                                      stroke-width="2"
-                                      stroke-linecap="round"
-                                      stroke-linejoin="round"
-                                      class="icon icon-2"
-                                    >
+                                  <a href="#" class="btn btn-2 btn-icon" aria-label="Button">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-2">
                                       <path d="M5 12m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0" />
                                       <path d="M12 12m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0" />
                                       <path d="M19 12m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0" />
@@ -1315,12 +831,7 @@ const PartnershipPage = () => {
                           </tr>
                           <tr>
                             <td>
-                              <input
-                                class="form-check-input m-0 align-middle table-selectable-check"
-                                type="checkbox"
-                                aria-label="Select invoice"
-                                value="true"
-                              />
+                              <input class="form-check-input m-0 align-middle table-selectable-check" type="checkbox" aria-label="Select invoice" value="true" />
                             </td>
                             <td class="sort-name">
                               <span class="avatar avatar-xs me-2"> </span>
@@ -1343,23 +854,8 @@ const PartnershipPage = () => {
                               <span class="on-unchecked"> Individual </span>
                               <div class="on-checked">
                                 <div class="d-flex justify-content-end">
-                                  <a
-                                    href="#"
-                                    class="btn btn-2 btn-icon"
-                                    aria-label="Button"
-                                  >
-                                    <svg
-                                      xmlns="http://www.w3.org/2000/svg"
-                                      width="24"
-                                      height="24"
-                                      viewBox="0 0 24 24"
-                                      fill="none"
-                                      stroke="currentColor"
-                                      stroke-width="2"
-                                      stroke-linecap="round"
-                                      stroke-linejoin="round"
-                                      class="icon icon-2"
-                                    >
+                                  <a href="#" class="btn btn-2 btn-icon" aria-label="Button">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-2">
                                       <path d="M5 12m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0" />
                                       <path d="M12 12m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0" />
                                       <path d="M19 12m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0" />
@@ -1371,12 +867,7 @@ const PartnershipPage = () => {
                           </tr>
                           <tr>
                             <td>
-                              <input
-                                class="form-check-input m-0 align-middle table-selectable-check"
-                                type="checkbox"
-                                aria-label="Select invoice"
-                                value="true"
-                              />
+                              <input class="form-check-input m-0 align-middle table-selectable-check" type="checkbox" aria-label="Select invoice" value="true" />
                             </td>
                             <td class="sort-name">
                               <span class="avatar avatar-xs me-2"> </span>
@@ -1396,23 +887,8 @@ const PartnershipPage = () => {
                               <span class="on-unchecked"> Agencies </span>
                               <div class="on-checked">
                                 <div class="d-flex justify-content-end">
-                                  <a
-                                    href="#"
-                                    class="btn btn-2 btn-icon"
-                                    aria-label="Button"
-                                  >
-                                    <svg
-                                      xmlns="http://www.w3.org/2000/svg"
-                                      width="24"
-                                      height="24"
-                                      viewBox="0 0 24 24"
-                                      fill="none"
-                                      stroke="currentColor"
-                                      stroke-width="2"
-                                      stroke-linecap="round"
-                                      stroke-linejoin="round"
-                                      class="icon icon-2"
-                                    >
+                                  <a href="#" class="btn btn-2 btn-icon" aria-label="Button">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-2">
                                       <path d="M5 12m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0" />
                                       <path d="M12 12m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0" />
                                       <path d="M19 12m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0" />
@@ -1424,12 +900,7 @@ const PartnershipPage = () => {
                           </tr>
                           <tr>
                             <td>
-                              <input
-                                class="form-check-input m-0 align-middle table-selectable-check"
-                                type="checkbox"
-                                aria-label="Select invoice"
-                                value="true"
-                              />
+                              <input class="form-check-input m-0 align-middle table-selectable-check" type="checkbox" aria-label="Select invoice" value="true" />
                             </td>
                             <td class="sort-name">
                               <span class="avatar avatar-xs me-2"> </span>
@@ -1449,23 +920,8 @@ const PartnershipPage = () => {
                               <span class="on-unchecked"> Agencies </span>
                               <div class="on-checked">
                                 <div class="d-flex justify-content-end">
-                                  <a
-                                    href="#"
-                                    class="btn btn-2 btn-icon"
-                                    aria-label="Button"
-                                  >
-                                    <svg
-                                      xmlns="http://www.w3.org/2000/svg"
-                                      width="24"
-                                      height="24"
-                                      viewBox="0 0 24 24"
-                                      fill="none"
-                                      stroke="currentColor"
-                                      stroke-width="2"
-                                      stroke-linecap="round"
-                                      stroke-linejoin="round"
-                                      class="icon icon-2"
-                                    >
+                                  <a href="#" class="btn btn-2 btn-icon" aria-label="Button">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-2">
                                       <path d="M5 12m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0" />
                                       <path d="M12 12m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0" />
                                       <path d="M19 12m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0" />
@@ -1477,12 +933,7 @@ const PartnershipPage = () => {
                           </tr>
                           <tr>
                             <td>
-                              <input
-                                class="form-check-input m-0 align-middle table-selectable-check"
-                                type="checkbox"
-                                aria-label="Select invoice"
-                                value="true"
-                              />
+                              <input class="form-check-input m-0 align-middle table-selectable-check" type="checkbox" aria-label="Select invoice" value="true" />
                             </td>
                             <td class="sort-name">
                               <span class="avatar avatar-xs me-2"> </span>
@@ -1505,23 +956,8 @@ const PartnershipPage = () => {
                               <span class="on-unchecked"> Event </span>
                               <div class="on-checked">
                                 <div class="d-flex justify-content-end">
-                                  <a
-                                    href="#"
-                                    class="btn btn-2 btn-icon"
-                                    aria-label="Button"
-                                  >
-                                    <svg
-                                      xmlns="http://www.w3.org/2000/svg"
-                                      width="24"
-                                      height="24"
-                                      viewBox="0 0 24 24"
-                                      fill="none"
-                                      stroke="currentColor"
-                                      stroke-width="2"
-                                      stroke-linecap="round"
-                                      stroke-linejoin="round"
-                                      class="icon icon-2"
-                                    >
+                                  <a href="#" class="btn btn-2 btn-icon" aria-label="Button">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-2">
                                       <path d="M5 12m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0" />
                                       <path d="M12 12m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0" />
                                       <path d="M19 12m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0" />
@@ -1533,20 +969,13 @@ const PartnershipPage = () => {
                           </tr>
                           <tr>
                             <td>
-                              <input
-                                class="form-check-input m-0 align-middle table-selectable-check"
-                                type="checkbox"
-                                aria-label="Select invoice"
-                                value="true"
-                              />
+                              <input class="form-check-input m-0 align-middle table-selectable-check" type="checkbox" aria-label="Select invoice" value="true" />
                             </td>
                             <td class="sort-name">
                               <span class="avatar avatar-xs me-2"> </span>
                               Carroll Erat
                             </td>
-                            <td class="sort-city">
-                              Šentilj v Slov. Goricah, Slovenia
-                            </td>
+                            <td class="sort-city">Šentilj v Slov. Goricah, Slovenia</td>
                             <td class="sort-status">
                               <span class="badge bg-success-lt">Active</span>
                             </td>
@@ -1563,23 +992,8 @@ const PartnershipPage = () => {
                               <span class="on-unchecked"> Event </span>
                               <div class="on-checked">
                                 <div class="d-flex justify-content-end">
-                                  <a
-                                    href="#"
-                                    class="btn btn-2 btn-icon"
-                                    aria-label="Button"
-                                  >
-                                    <svg
-                                      xmlns="http://www.w3.org/2000/svg"
-                                      width="24"
-                                      height="24"
-                                      viewBox="0 0 24 24"
-                                      fill="none"
-                                      stroke="currentColor"
-                                      stroke-width="2"
-                                      stroke-linecap="round"
-                                      stroke-linejoin="round"
-                                      class="icon icon-2"
-                                    >
+                                  <a href="#" class="btn btn-2 btn-icon" aria-label="Button">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-2">
                                       <path d="M5 12m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0" />
                                       <path d="M12 12m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0" />
                                       <path d="M19 12m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0" />
@@ -1591,12 +1005,7 @@ const PartnershipPage = () => {
                           </tr>
                           <tr>
                             <td>
-                              <input
-                                class="form-check-input m-0 align-middle table-selectable-check"
-                                type="checkbox"
-                                aria-label="Select invoice"
-                                value="true"
-                              />
+                              <input class="form-check-input m-0 align-middle table-selectable-check" type="checkbox" aria-label="Select invoice" value="true" />
                             </td>
                             <td class="sort-name">
                               <span class="avatar avatar-xs me-2"> </span>
@@ -1619,23 +1028,8 @@ const PartnershipPage = () => {
                               <span class="on-unchecked"> Agencies </span>
                               <div class="on-checked">
                                 <div class="d-flex justify-content-end">
-                                  <a
-                                    href="#"
-                                    class="btn btn-2 btn-icon"
-                                    aria-label="Button"
-                                  >
-                                    <svg
-                                      xmlns="http://www.w3.org/2000/svg"
-                                      width="24"
-                                      height="24"
-                                      viewBox="0 0 24 24"
-                                      fill="none"
-                                      stroke="currentColor"
-                                      stroke-width="2"
-                                      stroke-linecap="round"
-                                      stroke-linejoin="round"
-                                      class="icon icon-2"
-                                    >
+                                  <a href="#" class="btn btn-2 btn-icon" aria-label="Button">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-2">
                                       <path d="M5 12m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0" />
                                       <path d="M12 12m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0" />
                                       <path d="M19 12m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0" />
@@ -1647,12 +1041,7 @@ const PartnershipPage = () => {
                           </tr>
                           <tr>
                             <td>
-                              <input
-                                class="form-check-input m-0 align-middle table-selectable-check"
-                                type="checkbox"
-                                aria-label="Select invoice"
-                                value="true"
-                              />
+                              <input class="form-check-input m-0 align-middle table-selectable-check" type="checkbox" aria-label="Select invoice" value="true" />
                             </td>
                             <td class="sort-name">
                               <span class="avatar avatar-xs me-2"> </span>
@@ -1672,23 +1061,8 @@ const PartnershipPage = () => {
                               <span class="on-unchecked"> Ticket </span>
                               <div class="on-checked">
                                 <div class="d-flex justify-content-end">
-                                  <a
-                                    href="#"
-                                    class="btn btn-2 btn-icon"
-                                    aria-label="Button"
-                                  >
-                                    <svg
-                                      xmlns="http://www.w3.org/2000/svg"
-                                      width="24"
-                                      height="24"
-                                      viewBox="0 0 24 24"
-                                      fill="none"
-                                      stroke="currentColor"
-                                      stroke-width="2"
-                                      stroke-linecap="round"
-                                      stroke-linejoin="round"
-                                      class="icon icon-2"
-                                    >
+                                  <a href="#" class="btn btn-2 btn-icon" aria-label="Button">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-2">
                                       <path d="M5 12m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0" />
                                       <path d="M12 12m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0" />
                                       <path d="M19 12m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0" />
@@ -1700,12 +1074,7 @@ const PartnershipPage = () => {
                           </tr>
                           <tr>
                             <td>
-                              <input
-                                class="form-check-input m-0 align-middle table-selectable-check"
-                                type="checkbox"
-                                aria-label="Select invoice"
-                                value="true"
-                              />
+                              <input class="form-check-input m-0 align-middle table-selectable-check" type="checkbox" aria-label="Select invoice" value="true" />
                             </td>
                             <td class="sort-name">
                               <span class="avatar avatar-xs me-2"> </span>
@@ -1728,23 +1097,8 @@ const PartnershipPage = () => {
                               <span class="on-unchecked"> Ticket </span>
                               <div class="on-checked">
                                 <div class="d-flex justify-content-end">
-                                  <a
-                                    href="#"
-                                    class="btn btn-2 btn-icon"
-                                    aria-label="Button"
-                                  >
-                                    <svg
-                                      xmlns="http://www.w3.org/2000/svg"
-                                      width="24"
-                                      height="24"
-                                      viewBox="0 0 24 24"
-                                      fill="none"
-                                      stroke="currentColor"
-                                      stroke-width="2"
-                                      stroke-linecap="round"
-                                      stroke-linejoin="round"
-                                      class="icon icon-2"
-                                    >
+                                  <a href="#" class="btn btn-2 btn-icon" aria-label="Button">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-2">
                                       <path d="M5 12m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0" />
                                       <path d="M12 12m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0" />
                                       <path d="M19 12m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0" />
@@ -1756,12 +1110,7 @@ const PartnershipPage = () => {
                           </tr>
                           <tr>
                             <td>
-                              <input
-                                class="form-check-input m-0 align-middle table-selectable-check"
-                                type="checkbox"
-                                aria-label="Select invoice"
-                                value="true"
-                              />
+                              <input class="form-check-input m-0 align-middle table-selectable-check" type="checkbox" aria-label="Select invoice" value="true" />
                             </td>
                             <td class="sort-name">
                               <span class="avatar avatar-xs me-2"> TB </span>
@@ -1782,23 +1131,8 @@ const PartnershipPage = () => {
                               <span class="on-unchecked"> Agencies </span>
                               <div class="on-checked">
                                 <div class="d-flex justify-content-end">
-                                  <a
-                                    href="#"
-                                    class="btn btn-2 btn-icon"
-                                    aria-label="Button"
-                                  >
-                                    <svg
-                                      xmlns="http://www.w3.org/2000/svg"
-                                      width="24"
-                                      height="24"
-                                      viewBox="0 0 24 24"
-                                      fill="none"
-                                      stroke="currentColor"
-                                      stroke-width="2"
-                                      stroke-linecap="round"
-                                      stroke-linejoin="round"
-                                      class="icon icon-2"
-                                    >
+                                  <a href="#" class="btn btn-2 btn-icon" aria-label="Button">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-2">
                                       <path d="M5 12m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0" />
                                       <path d="M12 12m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0" />
                                       <path d="M19 12m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0" />
@@ -1810,12 +1144,7 @@ const PartnershipPage = () => {
                           </tr>
                           <tr>
                             <td>
-                              <input
-                                class="form-check-input m-0 align-middle table-selectable-check"
-                                type="checkbox"
-                                aria-label="Select invoice"
-                                value="true"
-                              />
+                              <input class="form-check-input m-0 align-middle table-selectable-check" type="checkbox" aria-label="Select invoice" value="true" />
                             </td>
                             <td class="sort-name">
                               <span class="avatar avatar-xs me-2"> </span>
@@ -1838,23 +1167,8 @@ const PartnershipPage = () => {
                               <span class="on-unchecked"> Agencies </span>
                               <div class="on-checked">
                                 <div class="d-flex justify-content-end">
-                                  <a
-                                    href="#"
-                                    class="btn btn-2 btn-icon"
-                                    aria-label="Button"
-                                  >
-                                    <svg
-                                      xmlns="http://www.w3.org/2000/svg"
-                                      width="24"
-                                      height="24"
-                                      viewBox="0 0 24 24"
-                                      fill="none"
-                                      stroke="currentColor"
-                                      stroke-width="2"
-                                      stroke-linecap="round"
-                                      stroke-linejoin="round"
-                                      class="icon icon-2"
-                                    >
+                                  <a href="#" class="btn btn-2 btn-icon" aria-label="Button">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-2">
                                       <path d="M5 12m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0" />
                                       <path d="M12 12m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0" />
                                       <path d="M19 12m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0" />
@@ -1866,12 +1180,7 @@ const PartnershipPage = () => {
                           </tr>
                           <tr>
                             <td>
-                              <input
-                                class="form-check-input m-0 align-middle table-selectable-check"
-                                type="checkbox"
-                                aria-label="Select invoice"
-                                value="true"
-                              />
+                              <input class="form-check-input m-0 align-middle table-selectable-check" type="checkbox" aria-label="Select invoice" value="true" />
                             </td>
                             <td class="sort-name">
                               <span class="avatar avatar-xs me-2"> EB </span>
@@ -1891,23 +1200,8 @@ const PartnershipPage = () => {
                               <span class="on-unchecked"> Agencies </span>
                               <div class="on-checked">
                                 <div class="d-flex justify-content-end">
-                                  <a
-                                    href="#"
-                                    class="btn btn-2 btn-icon"
-                                    aria-label="Button"
-                                  >
-                                    <svg
-                                      xmlns="http://www.w3.org/2000/svg"
-                                      width="24"
-                                      height="24"
-                                      viewBox="0 0 24 24"
-                                      fill="none"
-                                      stroke="currentColor"
-                                      stroke-width="2"
-                                      stroke-linecap="round"
-                                      stroke-linejoin="round"
-                                      class="icon icon-2"
-                                    >
+                                  <a href="#" class="btn btn-2 btn-icon" aria-label="Button">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-2">
                                       <path d="M5 12m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0" />
                                       <path d="M12 12m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0" />
                                       <path d="M19 12m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0" />
@@ -1922,66 +1216,31 @@ const PartnershipPage = () => {
                     </div>
                     <div class="card-footer d-flex align-items-center">
                       <div class="dropdown">
-                        <a
-                          class="btn dropdown-toggle"
-                          data-bs-toggle="dropdown"
-                        >
+                        <a class="btn dropdown-toggle" data-bs-toggle="dropdown">
                           <span id="page-count" class="me-1">
                             20
                           </span>
                           <span>records</span>
                         </a>
                         <div class="dropdown-menu">
-                          <a
-                            class="dropdown-item"
-                            onclick="setPageListItems(event)"
-                            data-value="10"
-                          >
+                          <a class="dropdown-item" onclick="setPageListItems(event)" data-value="10">
                             10 records
                           </a>
-                          <a
-                            class="dropdown-item"
-                            onclick="setPageListItems(event)"
-                            data-value="20"
-                          >
+                          <a class="dropdown-item" onclick="setPageListItems(event)" data-value="20">
                             20 records
                           </a>
-                          <a
-                            class="dropdown-item"
-                            onclick="setPageListItems(event)"
-                            data-value="50"
-                          >
+                          <a class="dropdown-item" onclick="setPageListItems(event)" data-value="50">
                             50 records
                           </a>
-                          <a
-                            class="dropdown-item"
-                            onclick="setPageListItems(event)"
-                            data-value="100"
-                          >
+                          <a class="dropdown-item" onclick="setPageListItems(event)" data-value="100">
                             100 records
                           </a>
                         </div>
                       </div>
                       <ul class="pagination m-0 ms-auto">
                         <li class="page-item disabled">
-                          <a
-                            class="page-link"
-                            href="#"
-                            tabindex="-1"
-                            aria-disabled="true"
-                          >
-                            <svg
-                              xmlns="http://www.w3.org/2000/svg"
-                              width="24"
-                              height="24"
-                              viewBox="0 0 24 24"
-                              fill="none"
-                              stroke="currentColor"
-                              stroke-width="2"
-                              stroke-linecap="round"
-                              stroke-linejoin="round"
-                              class="icon icon-1"
-                            >
+                          <a class="page-link" href="#" tabindex="-1" aria-disabled="true">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-1">
                               <path d="M15 6l-6 6l6 6" />
                             </svg>
                             prev
@@ -2040,18 +1299,7 @@ const PartnershipPage = () => {
                         <li class="page-item">
                           <a class="page-link" href="#">
                             next
-                            <svg
-                              xmlns="http://www.w3.org/2000/svg"
-                              width="24"
-                              height="24"
-                              viewBox="0 0 24 24"
-                              fill="none"
-                              stroke="currentColor"
-                              stroke-width="2"
-                              stroke-linecap="round"
-                              stroke-linejoin="round"
-                              class="icon icon-1"
-                            >
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-1">
                               <path d="M9 6l6 6l-6 6" />
                             </svg>
                           </a>

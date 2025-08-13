@@ -1,9 +1,4 @@
-import {
-  SET_INVITATION_PACKAGES,
-  SET_INVITATION_PACKAGE,
-  SET_INVITATION_PACKAGES_ERROR,
-  SET_INVITATION_PACKAGES_LOADING,
-} from "../../actions/invitationPackageAction";
+import { SET_WORK_UNITS, SET_WORK_UNIT, SET_WORK_UNITS_ERROR, SET_WORK_UNITS_LOADING } from "../../actions/workUnitAction";
 
 var initialState = {
   datas: [],
@@ -12,26 +7,26 @@ var initialState = {
   error: null,
 };
 
-const invitationPackageReducer = (state, action) => {
+const workUnitReducer = (state, action) => {
   state = state || initialState;
   switch (action.type) {
-    case SET_INVITATION_PACKAGES:
+    case SET_WORK_UNITS:
       return {
         ...state,
         datas: action.data,
       };
-    case SET_INVITATION_PACKAGE:
+    case SET_WORK_UNIT:
       return {
         ...state,
         data: action.data,
       };
-    case SET_INVITATION_PACKAGES_ERROR:
+    case SET_WORK_UNITS_ERROR:
       return {
         ...state,
         loading: false,
         error: action.error,
       };
-    case SET_INVITATION_PACKAGES_LOADING:
+    case SET_WORK_UNITS_LOADING:
       return {
         ...state,
         loading: action.status,
@@ -41,4 +36,4 @@ const invitationPackageReducer = (state, action) => {
   }
 };
 
-export default invitationPackageReducer;
+export default workUnitReducer;

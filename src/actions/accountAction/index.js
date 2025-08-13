@@ -11,9 +11,7 @@ export const fetchAccounts = (limit = 100, page = 1) => {
     dispatch({ type: SET_ACCOUNTS_LOADING, status: true });
 
     try {
-      const response = await authorizedAxios.get(
-        "/users?limit=" + limit + "&page=" + page
-      );
+      const response = await authorizedAxios.get("/users?limit=" + limit + "&page=" + page);
 
       if (response.status === 200 || response.status === 201) {
         dispatch({
@@ -25,8 +23,7 @@ export const fetchAccounts = (limit = 100, page = 1) => {
       console.error("error", error);
       dispatch({
         type: SET_ACCOUNTS_ERROR,
-        error:
-          error?.response?.data || "Terjadi kesalahan saat mengambil data.",
+        error: error?.response?.data || "Terjadi kesalahan saat mengambil data.",
       });
     } finally {
       dispatch({ type: SET_ACCOUNTS_LOADING, status: false });
@@ -51,8 +48,7 @@ export const getAccountById = (id) => {
       console.error("error", error);
       dispatch({
         type: SET_ACCOUNTS_ERROR,
-        error:
-          error?.response?.data || "Terjadi kesalahan saat mengambil data.",
+        error: error?.response?.data || "Terjadi kesalahan saat mengambil data.",
       });
     } finally {
       dispatch({ type: SET_ACCOUNTS_LOADING, status: false });
@@ -65,14 +61,11 @@ export const addAccount = (data) => {
     dispatch({ type: SET_ACCOUNTS_LOADING, status: true });
 
     try {
-      const response = await showToast(
-        authorizedAxios.post(`${BASE_URL}/users`, data),
-        {
-          loading: "Menyimpan data...",
-          success: "Data akun berhasil ditambahkan!",
-          error: (err) => err?.message || "Gagal menyimpan data!",
-        }
-      );
+      const response = await showToast(authorizedAxios.post(`${BASE_URL}/users`, data), {
+        loading: "Menyimpan data...",
+        success: "Data akun berhasil ditambahkan!",
+        error: (err) => err?.message || "Gagal menyimpan data!",
+      });
       if (response.status === 200 || response.status === 201) {
         dispatch(fetchAccounts());
       }
@@ -93,14 +86,11 @@ export const updateAccount = (id, data) => {
     dispatch({ type: SET_ACCOUNTS_LOADING, status: true });
 
     try {
-      const response = await showToast(
-        authorizedAxios.put(`${BASE_URL}/users/${id}`, data),
-        {
-          loading: "Mengupdate data...",
-          success: "Data akun berhasil diupdate!",
-          error: (err) => err?.message || "Gagal mengupdate data!",
-        }
-      );
+      const response = await showToast(authorizedAxios.put(`${BASE_URL}/users/${id}`, data), {
+        loading: "Mengupdate data...",
+        success: "Data akun berhasil diupdate!",
+        error: (err) => err?.response?.data?.message || "Gagal mengupdate data!",
+      });
       if (response.status === 200 || response.status === 201) {
         dispatch(fetchAccounts());
       }
@@ -121,14 +111,11 @@ export const deleteAccount = (id) => {
     dispatch({ type: SET_ACCOUNTS_LOADING, status: true });
 
     try {
-      const response = await showToast(
-        authorizedAxios.delete(`${BASE_URL}/users/${id}`),
-        {
-          loading: "Menghapus data...",
-          success: "Data akun berhasil dihapus!",
-          error: (err) => err?.message || "Gagal menghapus data!",
-        }
-      );
+      const response = await showToast(authorizedAxios.delete(`${BASE_URL}/users/${id}`), {
+        loading: "Menghapus data...",
+        success: "Data akun berhasil dihapus!",
+        error: (err) => err?.message || "Gagal menghapus data!",
+      });
       if (response.status === 200 || response.status === 201) {
         dispatch(fetchAccounts());
       }

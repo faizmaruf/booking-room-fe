@@ -7,17 +7,7 @@ import { connect } from "react-redux";
 import ModalDelete from "../../../components/Modals/ModalDelete";
 
 const DistrictPage = (props) => {
-  const {
-    districts,
-    cities,
-    provinces,
-    fetchDistricts,
-    fetchCities,
-    fetchProvinces,
-    isLoading,
-    isLoadingCity,
-    isLoadingProvince,
-  } = props;
+  const { districts, cities, provinces, fetchDistricts, fetchCities, fetchProvinces, isLoading, isLoadingCity, isLoadingProvince } = props;
   const [perPage, setPerPage] = useState(20);
   const [currentPage, setCurrentPage] = useState(1);
 
@@ -40,10 +30,7 @@ const DistrictPage = (props) => {
   const [formState, setFormState] = useState(initialState);
 
   const totalPages = Math.ceil(items?.length / perPage);
-  const paginatedItems = items?.slice(
-    (currentPage - 1) * perPage,
-    currentPage * perPage
-  );
+  const paginatedItems = items?.slice((currentPage - 1) * perPage, currentPage * perPage);
   const openModal = () => {
     setFormState(initialState);
     setIsShowModal(true);
@@ -76,9 +63,7 @@ const DistrictPage = (props) => {
   useEffect(() => {
     if (districts) {
       const filteredItems = districts?.filter((item) => {
-        const isTextMatch =
-          item?.id?.toLowerCase()?.includes(filterText?.toLowerCase()) ||
-          item?.name?.toLowerCase()?.includes(filterText?.toLowerCase());
+        const isTextMatch = item?.id?.toLowerCase()?.includes(filterText?.toLowerCase()) || item?.name?.toLowerCase()?.includes(filterText?.toLowerCase());
 
         return isTextMatch;
       });
@@ -97,47 +82,15 @@ const DistrictPage = (props) => {
             </div>
             <div class="col-auto ms-auto d-print-none">
               <div class="btn-list">
-                <a
-                  href="#"
-                  class="btn btn-primary btn-5 d-none d-sm-inline-block"
-                  data-bs-toggle="modal"
-                  data-bs-target="#modal-form"
-                >
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="24"
-                    height="24"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    stroke-width="2"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    class="icon icon-2"
-                  >
+                <a href="#" class="btn btn-primary btn-5 d-none d-sm-inline-block" data-bs-toggle="modal" data-bs-target="#modal-form">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-2">
                     <path d="M12 5l0 14" />
                     <path d="M5 12l14 0" />
                   </svg>
                   Tambah Kecamatan
                 </a>
-                <a
-                  href="#"
-                  class="btn btn-primary btn-6 d-sm-none btn-icon"
-                  data-bs-toggle="modal"
-                  data-bs-target="#modal-form"
-                >
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="24"
-                    height="24"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    stroke-width="2"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    class="icon icon-2"
-                  >
+                <a href="#" class="btn btn-primary btn-6 d-sm-none btn-icon" data-bs-toggle="modal" data-bs-target="#modal-form">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-2">
                     <path d="M12 5l0 14" />
                     <path d="M5 12l14 0" />
                   </svg>
@@ -157,25 +110,12 @@ const DistrictPage = (props) => {
                     <div class="row w-full">
                       <div class="col-md-9 col-12">
                         <h3 class="card-title mb-0">Kecamatan</h3>
-                        <p class="text-secondary m-0">
-                          Master wilayah Kecamatan di justforyou
-                        </p>
+                        <p class="text-secondary m-0">Master wilayah Kecamatan di Booking Room</p>
                       </div>
                       <div className="col-md-3 col-12 my-md-0 my-2">
                         <div class="input-group input-group-flat w-auto">
                           <span class="input-group-text">
-                            <svg
-                              xmlns="http://www.w3.org/2000/svg"
-                              width="24"
-                              height="24"
-                              viewBox="0 0 24 24"
-                              fill="none"
-                              stroke="currentColor"
-                              stroke-width="2"
-                              stroke-linecap="round"
-                              stroke-linejoin="round"
-                              class="icon icon-1"
-                            >
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-1">
                               <path d="M10 10m-7 0a7 7 0 1 0 14 0a7 7 0 1 0 -14 0" />
                               <path d="M21 21l-6 -6" />
                             </svg>
@@ -200,34 +140,22 @@ const DistrictPage = (props) => {
                         <thead>
                           <tr>
                             <th>
-                              <button
-                                class="table-sort d-flex justify-content-between"
-                                data-sort="sort-name"
-                              >
+                              <button class="table-sort d-flex justify-content-between" data-sort="sort-name">
                                 No
                               </button>
                             </th>
                             <th>
-                              <button
-                                class="table-sort d-flex justify-content-between"
-                                data-sort="sort-name"
-                              >
+                              <button class="table-sort d-flex justify-content-between" data-sort="sort-name">
                                 Kode
                               </button>
                             </th>
                             <th>
-                              <button
-                                class="table-sort d-flex justify-content-between"
-                                data-sort="sort-city"
-                              >
+                              <button class="table-sort d-flex justify-content-between" data-sort="sort-city">
                                 Nama
                               </button>
                             </th>
                             <th>
-                              <button
-                                class="table-sort d-flex justify-content-between"
-                                data-sort="sort-status"
-                              >
+                              <button class="table-sort d-flex justify-content-between" data-sort="sort-status">
                                 Status
                               </button>
                             </th>
@@ -243,11 +171,8 @@ const DistrictPage = (props) => {
                                   key={`loading-${index}`}
                                   style={{
                                     cursor: "loader",
-                                  }}
-                                >
-                                  <td className="sort-name py-4">
-                                    {(currentPage - 1) * perPage + index + 1}.
-                                  </td>
+                                  }}>
+                                  <td className="sort-name py-4">{(currentPage - 1) * perPage + index + 1}.</td>
                                   {[...Array(4)]?.map((_, i) => (
                                     <td key={i}>
                                       <div className="placeholder placeholder-lg w-75"></div>
@@ -257,17 +182,11 @@ const DistrictPage = (props) => {
                               ))
                             : paginatedItems?.map((district, index) => (
                                 <tr key={district.id}>
-                                  <td className="sort-name">
-                                    {(currentPage - 1) * perPage + index + 1}.
-                                  </td>
+                                  <td className="sort-name">{(currentPage - 1) * perPage + index + 1}.</td>
                                   <td className="sort-name">{district?.id}</td>
-                                  <td className="sort-district">
-                                    {district?.name}
-                                  </td>
+                                  <td className="sort-district">{district?.name}</td>
                                   <td className="sort-status">
-                                    <span className="badge bg-success-lt">
-                                      Active
-                                    </span>
+                                    <span className="badge bg-success-lt">Active</span>
                                   </td>
                                   <td>
                                     <div class="btn-list flex-nowrap justify-content-center">
@@ -286,25 +205,9 @@ const DistrictPage = (props) => {
                                             province_id: district?.province_id,
                                           });
                                           setIsShowModal(true);
-                                        }}
-                                      >
-                                        <svg
-                                          xmlns="http://www.w3.org/2000/svg"
-                                          width="24"
-                                          height="24"
-                                          viewBox="0 0 24 24"
-                                          fill="none"
-                                          stroke="currentColor"
-                                          stroke-width="2"
-                                          stroke-linecap="round"
-                                          stroke-linejoin="round"
-                                          class="icon icon-tabler icons-tabler-outline icon-tabler-edit"
-                                        >
-                                          <path
-                                            stroke="none"
-                                            d="M0 0h24v24H0z"
-                                            fill="none"
-                                          />
+                                        }}>
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-edit">
+                                          <path stroke="none" d="M0 0h24v24H0z" fill="none" />
                                           <path d="M7 7h-1a2 2 0 0 0 -2 2v9a2 2 0 0 0 2 2h9a2 2 0 0 0 2 -2v-1" />
                                           <path d="M20.385 6.585a2.1 2.1 0 0 0 -2.97 -2.97l-8.415 8.385v3h3l8.385 -8.415z" />
                                           <path d="M16 5l3 3" />
@@ -324,25 +227,9 @@ const DistrictPage = (props) => {
                                             name: district?.name,
                                             province_id: district?.province_id,
                                           });
-                                        }}
-                                      >
-                                        <svg
-                                          xmlns="http://www.w3.org/2000/svg"
-                                          width="24"
-                                          height="24"
-                                          viewBox="0 0 24 24"
-                                          fill="none"
-                                          stroke="currentColor"
-                                          stroke-width="2"
-                                          stroke-linecap="round"
-                                          stroke-linejoin="round"
-                                          class="icon icon-tabler icons-tabler-outline icon-tabler-trash"
-                                        >
-                                          <path
-                                            stroke="none"
-                                            d="M0 0h24v24H0z"
-                                            fill="none"
-                                          />
+                                        }}>
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-trash">
+                                          <path stroke="none" d="M0 0h24v24H0z" fill="none" />
                                           <path d="M4 7l16 0" />
                                           <path d="M10 11l0 6" />
                                           <path d="M14 11l0 6" />
@@ -360,10 +247,7 @@ const DistrictPage = (props) => {
                     </div>
                     <div className="card-footer d-flex align-items-center">
                       <div className="dropdown">
-                        <button
-                          className="btn dropdown-toggle"
-                          data-bs-toggle="dropdown"
-                        >
+                        <button className="btn dropdown-toggle" data-bs-toggle="dropdown">
                           <span id="page-count" className="me-1">
                             {perPage}
                           </span>
@@ -371,11 +255,7 @@ const DistrictPage = (props) => {
                         </button>
                         <div className="dropdown-menu">
                           {[10, 20, 50, 100].map((value) => (
-                            <button
-                              key={value}
-                              className="dropdown-item"
-                              onClick={() => handlePerPageChange(value)}
-                            >
+                            <button key={value} className="dropdown-item" onClick={() => handlePerPageChange(value)}>
                               {value} records
                             </button>
                           ))}
@@ -383,24 +263,9 @@ const DistrictPage = (props) => {
                       </div>
 
                       <ul className="pagination m-0 ms-auto">
-                        <li
-                          className={`page-item ${
-                            currentPage === 1 ? "disabled" : ""
-                          }`}
-                        >
-                          <button
-                            className="page-link"
-                            onClick={() =>
-                              setCurrentPage((prev) => Math.max(prev - 1, 1))
-                            }
-                          >
-                            <svg
-                              width="24"
-                              height="24"
-                              stroke="currentColor"
-                              fill="none"
-                              viewBox="0 0 24 24"
-                            >
+                        <li className={`page-item ${currentPage === 1 ? "disabled" : ""}`}>
+                          <button className="page-link" onClick={() => setCurrentPage((prev) => Math.max(prev - 1, 1))}>
+                            <svg width="24" height="24" stroke="currentColor" fill="none" viewBox="0 0 24 24">
                               <path d="M15 6l-6 6l6 6" />
                             </svg>
                             prev
@@ -410,43 +275,18 @@ const DistrictPage = (props) => {
                         {[...Array(totalPages)]?.map((_, idx) => {
                           const page = idx + 1;
                           return (
-                            <li
-                              key={page}
-                              className={`page-item ${
-                                currentPage === page ? "active" : ""
-                              }`}
-                            >
-                              <button
-                                className="page-link"
-                                onClick={() => setCurrentPage(page)}
-                              >
+                            <li key={page} className={`page-item ${currentPage === page ? "active" : ""}`}>
+                              <button className="page-link" onClick={() => setCurrentPage(page)}>
                                 {page}
                               </button>
                             </li>
                           );
                         })}
 
-                        <li
-                          className={`page-item ${
-                            currentPage === totalPages ? "disabled" : ""
-                          }`}
-                        >
-                          <button
-                            className="page-link"
-                            onClick={() =>
-                              setCurrentPage((prev) =>
-                                Math.min(prev + 1, totalPages)
-                              )
-                            }
-                          >
+                        <li className={`page-item ${currentPage === totalPages ? "disabled" : ""}`}>
+                          <button className="page-link" onClick={() => setCurrentPage((prev) => Math.min(prev + 1, totalPages))}>
                             next
-                            <svg
-                              width="24"
-                              height="24"
-                              stroke="currentColor"
-                              fill="none"
-                              viewBox="0 0 24 24"
-                            >
+                            <svg width="24" height="24" stroke="currentColor" fill="none" viewBox="0 0 24 24">
                               <path d="M9 6l6 6l-6 6" />
                             </svg>
                           </button>
@@ -460,22 +300,8 @@ const DistrictPage = (props) => {
           </div>
         </div>
       </div>
-      <FormDistrict
-        isShowModal={isShowModal}
-        isEdit={isEdit}
-        closeModal={closeModal}
-        formState={formState}
-        setFormState={setFormState}
-        fetchCities={fetchCities}
-        cities={cities}
-        isLoading={isLoadingCity}
-      />
-      <ModalDelete
-        labelModal={formState?.name}
-        isShowModal={isShowModalDelete}
-        closeModal={closeModalDelete}
-        handleDelete={handleDelete}
-      />
+      <FormDistrict isShowModal={isShowModal} isEdit={isEdit} closeModal={closeModal} formState={formState} setFormState={setFormState} fetchCities={fetchCities} cities={cities} isLoading={isLoadingCity} />
+      <ModalDelete labelModal={formState?.name} isShowModal={isShowModalDelete} closeModal={closeModalDelete} handleDelete={handleDelete} />
     </div>
   );
 };

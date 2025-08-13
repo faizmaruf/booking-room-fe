@@ -1,8 +1,3 @@
-import InvitationTemplatePage from "./InvitationTemplatePage";
-import InvitationServicePage from "./InvitationServicePage";
-import InvitationSongPage from "./InvitationSongPage";
-import InvitationPackagePage from "./InvitationPackagePage";
-import InvitationTagPage from "./InvitationTagPage";
 import AccountPage from "./AccountPage";
 import RolePage from "./RolePage";
 import PermissionPage from "./PermissionPage";
@@ -12,11 +7,6 @@ import DistrictPage from "./DistrictPage";
 import VillagePage from "./VillagePage";
 
 const Master = {
-  InvitationTemplatePage,
-  InvitationServicePage,
-  InvitationSongPage,
-  InvitationPackagePage,
-  InvitationTagPage,
   AccountPage,
   RolePage,
   PermissionPage,

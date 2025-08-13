@@ -1,4 +1,4 @@
-import React from 'react'
+import React from "react";
 
 const Footer = () => {
   return (
@@ -11,7 +11,7 @@ const Footer = () => {
                 <li class="list-inline-item">
                   Copyright &copy; 2025
                   <a href="." class="link-secondary">
-                    Justforyou
+                    Booking Room
                   </a>
                   . All rights reserved.
                 </li>
@@ -28,6 +28,6 @@ const Footer = () => {
       </footer>
     </div>
   );
-}
+};
 
-export default Footer
+export default Footer;

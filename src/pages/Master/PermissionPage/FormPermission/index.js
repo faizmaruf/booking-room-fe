@@ -4,15 +4,7 @@ import { FileUploader } from "react-drag-drop-files";
 import { fileToBase64 } from "../../../../utils/helpers/fileToBase64";
 
 const FormPermission = (props) => {
-  const {
-    isShowModal,
-    isEdit,
-    closeModal,
-    formState,
-    setFormState,
-    handleAdd,
-    handleUpdate,
-  } = props;
+  const { isShowModal, isEdit, closeModal, formState, setFormState, handleAdd, handleUpdate, optionTypeAccess } = props;
   const [showPassword, setShowPassword] = useState(false);
   const inputRefName = useRef(null);
   const inputRef = useRef(null);
@@ -26,8 +18,6 @@ const FormPermission = (props) => {
     { value: "vanilla", label: "Vanilla" },
   ];
 
-  console.log("formState", formState);
-
   return (
     <div
       className="modal modal-blur fade "
@@ -37,24 +27,12 @@ const FormPermission = (props) => {
       aria-hidden="false"
       style={{
         backgroundColor: "rgba(0, 0, 0, 0.3)",
-      }}
-    >
-      <div
-        class="modal-dialog modal-dialog-centered modal-lg"
-        permission="document"
-      >
+      }}>
+      <div class="modal-dialog modal-dialog-centered modal-lg" permission="document">
         <div class="modal-content">
           <div class="modal-header">
-            <h5 class="modal-title">
-              Master Permission {!isEdit ? "Baru" : "Edit"}
-            </h5>
-            <button
-              type="button"
-              class="btn-close"
-              data-bs-dismiss="modal"
-              aria-label="Close"
-              onClick={closeModal}
-            ></button>
+            <h5 class="modal-title">Master Permission {!isEdit ? "Baru" : "Edit"}</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" onClick={closeModal}></button>
           </div>
           <div class="modal-body">
             <div class="row">
@@ -62,18 +40,7 @@ const FormPermission = (props) => {
                 <label class="form-label">Nama Akses / Permission</label>
                 <div class="mb-3 input-icon">
                   <span class="input-icon-addon">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="24"
-                      height="24"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      stroke-width="2"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      class="icon icon-tabler icons-tabler-outline icon-tabler-table-plus"
-                    >
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-table-plus">
                       <path stroke="none" d="M0 0h24v24H0z" fill="none" />
                       <path d="M12.5 21h-7.5a2 2 0 0 1 -2 -2v-14a2 2 0 0 1 2 -2h14a2 2 0 0 1 2 2v7.5" />
                       <path d="M3 10h18" />
@@ -101,33 +68,13 @@ const FormPermission = (props) => {
             </div>
           </div>
           <div class="modal-footer">
-            <a
-              href="#"
-              class="btn btn-link link-secondary btn-3"
-              data-bs-dismiss="modal"
-            >
+            <a href="#" class="btn btn-link link-secondary btn-3" data-bs-dismiss="modal">
               {" "}
               Cancel{" "}
             </a>
             {isEdit ? (
-              <a
-                href="#"
-                class="btn bg-secondary-lt btn-5 ms-auto"
-                data-bs-dismiss="modal"
-                onClick={handleUpdate}
-              >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="24"
-                  height="24"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="2"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  class="icon icon-tabler icons-tabler-outline icon-tabler-edit"
-                >
+              <a href="#" class="btn bg-secondary-lt btn-5 ms-auto" data-bs-dismiss="modal" onClick={handleUpdate}>
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-edit">
                   <path stroke="none" d="M0 0h24v24H0z" fill="none" />
                   <path d="M7 7h-1a2 2 0 0 0 -2 2v9a2 2 0 0 0 2 2h9a2 2 0 0 0 2 -2v-1" />
                   <path d="M20.385 6.585a2.1 2.1 0 0 0 -2.97 -2.97l-8.415 8.385v3h3l8.385 -8.415z" />
@@ -136,24 +83,8 @@ const FormPermission = (props) => {
                 Edit Data
               </a>
             ) : (
-              <a
-                href="#"
-                class="btn btn-primary btn-5 ms-auto"
-                data-bs-dismiss="modal"
-                onClick={handleAdd}
-              >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="24"
-                  height="24"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="2"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  class="icon icon-2"
-                >
+              <a href="#" class="btn btn-primary btn-5 ms-auto" data-bs-dismiss="modal" onClick={handleAdd}>
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-2">
                   <path d="M12 5l0 14" />
                   <path d="M5 12l14 0" />
                 </svg>

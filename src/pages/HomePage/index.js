@@ -272,7 +272,7 @@ const HomePage = () => {
                 <li class="list-inline-item">
                   Copyright &copy; 2025
                   <a href="." class="link-secondary">
-                    Justforyou
+                    Booking Room
                   </a>
                   . All rights reserved.
                 </li>

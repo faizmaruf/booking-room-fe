@@ -7,10 +7,8 @@ import regionReducer from "./regionReducer";
 import authReducer from "./authReducer";
 import accountReducer from "./accountReducer";
 import roleReducer from "./roleReducer";
+import workUnitReducer from "./workUnitReducer";
 import permissionReducer from "./permissionReducer";
-import invitationPackageReducer from "./invitationPackageReducer";
-import invitationServiceReducer from "./invitationServiceReducer";
-import invitationSongReducer from "./invitationSongReducer";
 
 const rootReducer = combineReducers({
   waybill: waybillReducer,
@@ -21,9 +19,7 @@ const rootReducer = combineReducers({
   accounts: accountReducer,
   roles: roleReducer,
   permissions: permissionReducer,
-  invitationPackages: invitationPackageReducer,
-  invitationServices: invitationServiceReducer,
-  invitationSongs: invitationSongReducer,
+  workUnits: workUnitReducer,
 });
 
 export default rootReducer;
