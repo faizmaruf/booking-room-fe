@@ -1,12 +1,4 @@
-import {
-  HomePage,
-  UnderMaintenancePage,
-  LoginPage,
-  NotFoundPage,
-  ServerErrorPage,
-  PartnershipPage,
-  Master,
-} from "../pages";
+import { HomePage, UnderMaintenancePage, LoginPage, NotFoundPage, ServerErrorPage, PartnershipPage, Master } from "../pages";
 import { FullLayout, DashboardLayout } from "../layouts";
 import PATH_URL from "./path";
 
@@ -34,6 +26,12 @@ export const routes = [
   {
     path: PATH_URL.MASTER_ACCOUNTS,
     element: Master.AccountPage,
+    needAuthenticated: true,
+    layout: DashboardLayout,
+  },
+  {
+    path: PATH_URL.MASTER_ROOMS,
+    element: Master.RoomPage,
     needAuthenticated: true,
     layout: DashboardLayout,
   },

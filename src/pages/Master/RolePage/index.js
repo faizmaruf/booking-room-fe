@@ -110,8 +110,6 @@ const RolePage = (props) => {
     }
   }, [roles, filterText]);
 
-  console.log("pagin", paginatedItems);
-
   return (
     <div class="page-wrapper">
       <div class="page-header d-print-none">

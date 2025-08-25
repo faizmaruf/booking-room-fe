@@ -9,6 +9,7 @@ import accountReducer from "./accountReducer";
 import roleReducer from "./roleReducer";
 import workUnitReducer from "./workUnitReducer";
 import permissionReducer from "./permissionReducer";
+import roomReducer from "./roomReducer";
 
 const rootReducer = combineReducers({
   waybill: waybillReducer,
@@ -20,6 +21,7 @@ const rootReducer = combineReducers({
   roles: roleReducer,
   permissions: permissionReducer,
   workUnits: workUnitReducer,
+  rooms: roomReducer,
 });
 
 export default rootReducer;

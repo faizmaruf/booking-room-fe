@@ -5,6 +5,7 @@ import ProvincePage from "./ProvincePage";
 import CityPage from "./CityPage";
 import DistrictPage from "./DistrictPage";
 import VillagePage from "./VillagePage";
+import RoomPage from "./RoomPage";
 
 const Master = {
   AccountPage,
@@ -14,6 +15,7 @@ const Master = {
   CityPage,
   DistrictPage,
   VillagePage,
+  RoomPage,
 };
 
 export default Master;

@@ -8,6 +8,7 @@ const UNDER_MAINTENANCE = "/maintenance";
 const HOME = "/home";
 const PARTNERSHIPS = "/partnerships";
 const MASTER_ACCOUNTS = "/master/accounts";
+const MASTER_ROOMS = "/master/rooms";
 const MASTER_ROLES = "/master/role-permission/roles";
 const MASTER_PERMISSIONS = "/master/role-permission/permissions";
 const MASTER_INVITATION_PACKAGES = "/master/invitation/packages";
@@ -33,6 +34,7 @@ const PATH_URL = {
   MASTER_ROLES,
   MASTER_PERMISSIONS,
   MASTER_ACCOUNTS,
+  MASTER_ROOMS,
   MASTER_INVITATION_PACKAGES,
   MASTER_INVITATION_SERVICES,
   MASTER_INVITATION_SONGS,
