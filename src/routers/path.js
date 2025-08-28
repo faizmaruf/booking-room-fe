@@ -6,7 +6,7 @@ const NOT_FOUND = "*";
 const SERVER_ERROR = "/500";
 const UNDER_MAINTENANCE = "/maintenance";
 const HOME = "/home";
-const PARTNERSHIPS = "/partnerships";
+const BOOKING = "/bookings";
 const MASTER_ACCOUNTS = "/master/accounts";
 const MASTER_ROOMS = "/master/rooms";
 const MASTER_ROLES = "/master/role-permission/roles";
@@ -30,7 +30,7 @@ const PATH_URL = {
   UNDER_MAINTENANCE,
   SERVER_ERROR,
   HOME,
-  PARTNERSHIPS,
+  BOOKING,
   MASTER_ROLES,
   MASTER_PERMISSIONS,
   MASTER_ACCOUNTS,

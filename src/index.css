@@ -1,10 +1,33 @@
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans",
+    "Droid Sans", "Helvetica Neue", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace;
+}
+/* ubah warna event */
+.rbc-event {
+  background-color: white !important;
+  color: black !important;
+  border-radius: 0.5rem !important;
+  border: none !important;
+  font-size: 0.85rem;
+  line-height: 1.3;
+  white-space: normal !important; /* biar multi-line */
+}
+
+/* ubah tampilan cell bulan */
+.rbc-month-row {
+  border: 1px solid #e0e0e0;
+}
+
+/* ubah header hari */
+.rbc-header {
+  background: #f8f9fa;
+  font-weight: bold;
+  color: #333;
 }

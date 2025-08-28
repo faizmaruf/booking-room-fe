@@ -1,4 +1,12 @@
-import { HomePage, UnderMaintenancePage, LoginPage, NotFoundPage, ServerErrorPage, PartnershipPage, Master } from "../pages";
+import {
+  HomePage,
+  UnderMaintenancePage,
+  LoginPage,
+  NotFoundPage,
+  ServerErrorPage,
+  BookingPage,
+  Master,
+} from "../pages";
 import { FullLayout, DashboardLayout } from "../layouts";
 import PATH_URL from "./path";
 
@@ -102,8 +110,8 @@ export const routes = [
     layout: DashboardLayout,
   },
   {
-    path: PATH_URL.PARTNERSHIPS,
-    element: PartnershipPage,
+    path: PATH_URL.BOOKING,
+    element: BookingPage,
     needAuthenticated: true,
     layout: DashboardLayout,
   },
