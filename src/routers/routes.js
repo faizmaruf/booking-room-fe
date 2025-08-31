@@ -6,6 +6,7 @@ import {
   ServerErrorPage,
   BookingPage,
   Master,
+  LandingPage,
 } from "../pages";
 import { FullLayout, DashboardLayout } from "../layouts";
 import PATH_URL from "./path";
@@ -19,8 +20,8 @@ export const routes = [
     layout: FullLayout,
   },
   {
-    path: PATH_URL.LOGIN2,
-    element: LoginPage,
+    path: PATH_URL.LANDING,
+    element: LandingPage,
     needAuthenticated: false,
     exact: true,
     layout: FullLayout,

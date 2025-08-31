@@ -18,52 +18,6 @@ const FormRoom = (props) => {
   const optionsUser = users.map((item) => {
     return { value: item?.id, label: item?.name };
   });
-  // const handleChangeImage = (files) => {
-  //   if (!files || files.length === 0) return;
-
-  //   const newFiles = Array.from(files).map((file) => {
-  //     return new Promise((resolve) => {
-  //       const reader = new FileReader();
-  //       reader.onload = () => {
-  //         const base64Raw = reader.result.split(",")[1];
-  //         const fileType = file.type || "application/octet-stream";
-  //         const base64WithFormat = `data:${fileType};base64,${base64Raw}`;
-  //         resolve({
-  //           fileData: base64WithFormat,
-  //           fileName: file?.name,
-  //           fileType: file?.type,
-  //           fileInformation: file?.name,
-  //           fileDescription: "",
-  //           blob: new Blob([base64Raw], { type: fileType }),
-  //           blobUrl: URL.createObjectURL(new Blob([base64Raw], { type: fileType })), // create blob url
-  //         });
-  //       };
-  //       reader.readAsDataURL(file);
-  //     });
-  //   });
-  //   // Proses semua file secara asinkron
-  //   Promise.all(newFiles).then((newFileDataArray) => {
-  //     const sizeFile = newFileDataArray[newFileDataArray?.length - 1]?.sizeInMB;
-
-  //     if (sizeFile > 5) {
-  //       toast.error(`File ${newFileDataArray[newFileDataArray?.length - 1]?.fileName} lebih dari 5 MB`, {
-  //         position: "top-right",
-  //         autoClose: 2000,
-  //         hideProgressBar: false,
-  //         closeOnClick: true,
-  //         pauseOnHover: true,
-  //         draggable: true,
-  //         progress: undefined,
-  //         theme: "light",
-  //       });
-  //       return;
-  //     }
-
-  //     setFormState((prevState) => [...newFileDataArray, ...prevState]);
-  //   });
-  // };
-
-  console.log(formState, "----");
 
   return (
     <div

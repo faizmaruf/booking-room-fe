@@ -310,7 +310,7 @@ const BookingPage = (props) => {
     rooms,
     updateBooking,
   } = props;
-  const [view, setView] = useState("month"); // state untuk kontrol view
+  const [view, setView] = useState("week"); // state untuk kontrol view
   const [date, setDate] = useState(new Date());
   const initialFormState = {
     id: null,
@@ -570,6 +570,28 @@ const BookingPage = (props) => {
                         }}
                         popup
                       />
+                      <div className="d-flex justify-content-center mt-3">
+                        <div className="d-flex gap-4">
+                          <div className="d-flex align-items-center">
+                            <span
+                              className="rounded-circle bg-success d-inline-block me-2"
+                              style={{ width: "12px", height: "12px" }}></span>
+                            <span>Approved</span>
+                          </div>
+                          <div className="d-flex align-items-center">
+                            <span
+                              className="rounded-circle bg-info d-inline-block me-2"
+                              style={{ width: "12px", height: "12px" }}></span>
+                            <span>Pending</span>
+                          </div>
+                          <div className="d-flex align-items-center">
+                            <span
+                              className="rounded-circle bg-danger d-inline-block me-2"
+                              style={{ width: "12px", height: "12px" }}></span>
+                            <span>Rejected</span>
+                          </div>
+                        </div>
+                      </div>
                     </div>
                   )}
                 </div>

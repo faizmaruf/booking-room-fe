@@ -1,5 +1,5 @@
 const LOGIN = "/login";
-const LOGIN2 = "/";
+const LANDING = "/";
 const REGISTER = "/register";
 const DASHBOARD = "/dashboard";
 const NOT_FOUND = "*";
@@ -23,7 +23,7 @@ const MASTER_REGEION_VILLAGES = "/master/region/villages";
 
 const PATH_URL = {
   LOGIN,
-  LOGIN2,
+  LANDING,
   REGISTER,
   DASHBOARD,
   NOT_FOUND,

@@ -4,6 +4,8 @@ import { showToast } from "../../utils/helpers/ShowToast";
 import Swal from "sweetalert2";
 export const SET_BOOKINGS = "SET_BOOKINGS";
 export const SET_BOOKING = "SET_BOOKING";
+export const SET_BOOKING_BY_MONTH_UNIT = "SET_BOOKING_BY_MONTH_UNIT";
+export const SET_BOOKING_BY_ROOM = "SET_BOOKING_BY_ROOM";
 export const SET_BOOKINGS_LOADING = "SET_BOOKINGS_LOADING";
 export const SET_BOOKINGS_ERROR = "SET_BOOKINGS_ERROR";
 
@@ -43,6 +45,54 @@ export const getBookingById = (id) => {
         dispatch({
           type: SET_BOOKING,
           data: response.data,
+        });
+      }
+    } catch (error) {
+      console.error("error", error);
+      dispatch({
+        type: SET_BOOKINGS_ERROR,
+        error: error?.response?.data || "Terjadi kesalahan saat mengambil data.",
+      });
+    } finally {
+      dispatch({ type: SET_BOOKINGS_LOADING, status: false });
+    }
+  };
+};
+export const getBookingsByMonthUnit = (date) => {
+  return async (dispatch) => {
+    dispatch({ type: SET_BOOKINGS_LOADING, status: true });
+
+    try {
+      const response = await authorizedAxios.get("/bookings/get-booking-by-month-unit?date" + date);
+
+      if (response.status === 200 || response.status === 201) {
+        dispatch({
+          type: SET_BOOKING_BY_MONTH_UNIT,
+          data: response.data?.data,
+        });
+      }
+    } catch (error) {
+      console.error("error", error);
+      dispatch({
+        type: SET_BOOKINGS_ERROR,
+        error: error?.response?.data || "Terjadi kesalahan saat mengambil data.",
+      });
+    } finally {
+      dispatch({ type: SET_BOOKINGS_LOADING, status: false });
+    }
+  };
+};
+export const getBookingsByRoom = (date) => {
+  return async (dispatch) => {
+    dispatch({ type: SET_BOOKINGS_LOADING, status: true });
+
+    try {
+      const response = await authorizedAxios.get("/bookings/get-booking-by-room?date" + date);
+
+      if (response.status === 200 || response.status === 201) {
+        dispatch({
+          type: SET_BOOKING_BY_ROOM,
+          data: response.data?.data,
         });
       }
     } catch (error) {

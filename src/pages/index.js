@@ -5,5 +5,6 @@ import UnderMaintenancePage from "./UnderMaintenancePage";
 import ServerErrorPage from "./ServerErrorPage";
 import BookingPage from "./BookingPage";
 import Master from "./Master";
+import LandingPage from "./LandingPage";
 
-export { HomePage, UnderMaintenancePage, LoginPage, NotFoundPage, ServerErrorPage, BookingPage, Master };
+export { HomePage, UnderMaintenancePage, LoginPage, NotFoundPage, ServerErrorPage, BookingPage, Master, LandingPage };

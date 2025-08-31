@@ -20,7 +20,7 @@ export default function AppLayout({ children, needAuthenticated = false }) {
       const nowInSeconds = Math.floor(Date.now() / 1000);
       if (nowInSeconds >= auth.expires_in) {
         localStorage.removeItem("auth");
-        navigate("/login", { replace: true });
+        navigate("/", { replace: true });
       }
     }
   }, [auth, navigate]);
@@ -28,7 +28,7 @@ export default function AppLayout({ children, needAuthenticated = false }) {
   useEffect(() => {
     window.scrollTo(0, 0);
     if (needAuthenticated && !auth) {
-      navigate("/login", { replace: true });
+      navigate("/", { replace: true });
     }
   }, [auth, needAuthenticated, navigate]);
 
