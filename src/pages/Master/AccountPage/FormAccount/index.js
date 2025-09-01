@@ -19,7 +19,6 @@ const FormAccount = (props) => {
   const optionsWorkUnit = workUnits.map((item) => {
     return { value: item?.id, label: item?.name };
   });
-  console.log(formState);
 
   return (
     <div
@@ -35,7 +34,12 @@ const FormAccount = (props) => {
         <div class="modal-content">
           <div class="modal-header">
             <h5 class="modal-title">Master Akun {!isEdit ? "Baru" : "Edit"}</h5>
-            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" onClick={closeModal}></button>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+              onClick={closeModal}></button>
           </div>
           <div class="modal-body">
             <div class="row">
@@ -43,7 +47,17 @@ const FormAccount = (props) => {
                 <label class="form-label">Nama Lengkap</label>
                 <div class="mb-3 input-icon">
                   <span class="input-icon-addon">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-1">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="24"
+                      height="24"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      class="icon icon-1">
                       <path d="M8 7a4 4 0 1 0 8 0a4 4 0 0 0 -8 0"></path>
                       <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2"></path>
                     </svg>
@@ -72,7 +86,17 @@ const FormAccount = (props) => {
                     style={{
                       zIndex: 9999,
                     }}>
-                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-building2-icon lucide-building-2 ms-1">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="20"
+                      height="20"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="1"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      class="lucide lucide-building2-icon lucide-building-2 ms-1">
                       <path d="M6 22V4a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v18Z" />
                       <path d="M6 12H4a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h2" />
                       <path d="M18 9h2a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2h-2" />
@@ -128,7 +152,11 @@ const FormAccount = (props) => {
                         zIndex: 99999, // kasih zIndex tinggi biar selalu di atas
                       }),
                     }}
-                    value={formState?.work_unit_id ? optionsWorkUnit.find((option) => option.value === formState?.work_unit_id) : null}
+                    value={
+                      formState?.work_unit_id
+                        ? optionsWorkUnit.find((option) => option.value === formState?.work_unit_id)
+                        : null
+                    }
                     onChange={(selectedOptions) => {
                       setFormState({
                         ...formState,
@@ -144,7 +172,17 @@ const FormAccount = (props) => {
                 <label class="form-label">NIP/Email</label>
                 <div class="mb-3 input-icon">
                   <span class="input-icon-addon">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-at">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="24"
+                      height="24"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      class="icon icon-tabler icons-tabler-outline icon-tabler-at">
                       <path stroke="none" d="M0 0h24v24H0z" fill="none" />
                       <path d="M12 12m-4 0a4 4 0 1 0 8 0a4 4 0 1 0 -8 0" />
                       <path d="M16 12v1.5a2.5 2.5 0 0 0 5 0v-1.5a9 9 0 1 0 -5.5 8.28" />
@@ -173,7 +211,17 @@ const FormAccount = (props) => {
                     style={{
                       zIndex: 9,
                     }}>
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-key">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="24"
+                      height="24"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      class="icon icon-tabler icons-tabler-outline icon-tabler-key">
                       <path stroke="none" d="M0 0h24v24H0z" fill="none" />
                       <path d="M16.555 3.843l3.602 3.602a2.877 2.877 0 0 1 0 4.069l-2.643 2.643a2.877 2.877 0 0 1 -4.069 0l-.301 -.301l-6.558 6.558a2 2 0 0 1 -1.239 .578l-.175 .008h-1.172a1 1 0 0 1 -.993 -.883l-.007 -.117v-1.172a2 2 0 0 1 .467 -1.284l.119 -.13l.414 -.414h2v-2h2v-2l2.144 -2.144l-.301 -.301a2.877 2.877 0 0 1 0 -4.069l2.643 -2.643a2.877 2.877 0 0 1 4.069 0z" />
                       <path d="M15 9h.01" />
@@ -213,14 +261,34 @@ const FormAccount = (props) => {
                         }
                       }}>
                       {showPassword ? (
-                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-eye-off">
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="24"
+                          height="24"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          stroke="currentColor"
+                          stroke-width="2"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          class="icon icon-tabler icons-tabler-outline icon-tabler-eye-off">
                           <path stroke="none" d="M0 0h24v24H0z" fill="none" />
                           <path d="M10.585 10.587a2 2 0 0 0 2.829 2.828" />
                           <path d="M16.681 16.673a8.717 8.717 0 0 1 -4.681 1.327c-3.6 0 -6.6 -2 -9 -6c1.272 -2.12 2.712 -3.678 4.32 -4.674m2.86 -1.146a9.055 9.055 0 0 1 1.82 -.18c3.6 0 6.6 2 9 6c-.666 1.11 -1.379 2.067 -2.138 2.87" />
                           <path d="M3 3l18 18" />
                         </svg>
                       ) : (
-                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-1">
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="24"
+                          height="24"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          stroke="currentColor"
+                          stroke-width="2"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          class="icon icon-1">
                           <path d="M10 12a2 2 0 1 0 4 0a2 2 0 0 0 -4 0" />
                           <path d="M21 12c-2.4 4 -5.4 6 -9 6c-3.6 0 -6.6 -2 -9 -6c2.4 -4 5.4 -6 9 -6c3.6 0 6.6 2 9 6" />
                         </svg>
@@ -233,7 +301,17 @@ const FormAccount = (props) => {
                 <label class="form-label">Nomor HP</label>
                 <div class="mb-3 input-icon">
                   <span class="input-icon-addon">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-brand-whatsapp">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="24"
+                      height="24"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      class="icon icon-tabler icons-tabler-outline icon-tabler-brand-whatsapp">
                       <path stroke="none" d="M0 0h24v24H0z" fill="none" />
                       <path d="M3 21l1.65 -3.8a9 9 0 1 1 3.4 2.9l-5.05 .9" />
                       <path d="M9 10a.5 .5 0 0 0 1 0v-1a.5 .5 0 0 0 -1 0v1a5 5 0 0 0 5 5h1a.5 .5 0 0 0 0 -1h-1a.5 .5 0 0 0 0 1" />
@@ -272,7 +350,17 @@ const FormAccount = (props) => {
                     style={{
                       zIndex: 9999,
                     }}>
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-rosette-discount-check">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="24"
+                      height="24"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      class="icon icon-tabler icons-tabler-outline icon-tabler-rosette-discount-check">
                       <path stroke="none" d="M0 0h24v24H0z" fill="none" />
                       <path d="M5 7.2a2.2 2.2 0 0 1 2.2 -2.2h1a2.2 2.2 0 0 0 1.55 -.64l.7 -.7a2.2 2.2 0 0 1 3.12 0l.7 .7c.412 .41 .97 .64 1.55 .64h1a2.2 2.2 0 0 1 2.2 2.2v1c0 .58 .23 1.138 .64 1.55l.7 .7a2.2 2.2 0 0 1 0 3.12l-.7 .7a2.2 2.2 0 0 0 -.64 1.55v1a2.2 2.2 0 0 1 -2.2 2.2h-1a2.2 2.2 0 0 0 -1.55 .64l-.7 .7a2.2 2.2 0 0 1 -3.12 0l-.7 -.7a2.2 2.2 0 0 0 -1.55 -.64h-1a2.2 2.2 0 0 1 -2.2 -2.2v-1a2.2 2.2 0 0 0 -.64 -1.55l-.7 -.7a2.2 2.2 0 0 1 0 -3.12l.7 -.7a2.2 2.2 0 0 0 .64 -1.55v-1" />
                       <path d="M9 12l2 2l4 -4" />
@@ -319,7 +407,9 @@ const FormAccount = (props) => {
                         color: "#90a4ae", // muted blue-gray
                       }),
                     }}
-                    value={formState?.role_id ? optionsRole.find((option) => option.value === formState?.role_id) : null}
+                    value={
+                      formState?.role_id ? optionsRole.find((option) => option.value === formState?.role_id) : null
+                    }
                     onChange={(selectedOptions) => {
                       setFormState({
                         ...formState,
@@ -368,7 +458,17 @@ const FormAccount = (props) => {
             </a>
             {isEdit ? (
               <a href="#" class="btn bg-secondary-lt btn-5 ms-auto" data-bs-dismiss="modal" onClick={handleUpdate}>
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-edit">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  class="icon icon-tabler icons-tabler-outline icon-tabler-edit">
                   <path stroke="none" d="M0 0h24v24H0z" fill="none" />
                   <path d="M7 7h-1a2 2 0 0 0 -2 2v9a2 2 0 0 0 2 2h9a2 2 0 0 0 2 -2v-1" />
                   <path d="M20.385 6.585a2.1 2.1 0 0 0 -2.97 -2.97l-8.415 8.385v3h3l8.385 -8.415z" />
@@ -378,7 +478,17 @@ const FormAccount = (props) => {
               </a>
             ) : (
               <a href="#" class="btn btn-primary btn-5 ms-auto" data-bs-dismiss="modal" onClick={handleAdd}>
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-2">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  class="icon icon-2">
                   <path d="M12 5l0 14" />
                   <path d="M5 12l14 0" />
                 </svg>
@@ -415,10 +525,26 @@ const DragDropFile = (props) => {
       dropMessageStyle={{ margin: "0  0.5rem" }}
       style={{ position: "relative" }}>
       <div className="d-flex align-items-center justify-content-center w-100 ">
-        <label htmlFor="dropzone-file" className="d-flex flex-column align-items-center justify-content-center w-100  rounded cursor-pointer bg-light" style={{ height: "16rem" }}>
+        <label
+          htmlFor="dropzone-file"
+          className="d-flex flex-column align-items-center justify-content-center w-100  rounded cursor-pointer bg-light"
+          style={{ height: "16rem" }}>
           <div className="d-flex flex-column align-items-center justify-content-center pt-3 pb-3">
-            <svg className="mb-3 text-secondary" width="32" height="32" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 16">
-              <path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 13h3a3 3 0 0 0 0-6h-.025A5.56 5.56 0 0 0 16 6.5 5.5 5.5 0 0 0 5.207 5.021C5.137 5.017 5.071 5 5 5a4 4 0 0 0 0 8h2.167M10 15V6m0 0L8 8m2-2 2 2" />
+            <svg
+              className="mb-3 text-secondary"
+              width="32"
+              height="32"
+              aria-hidden="true"
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 20 16">
+              <path
+                stroke="currentColor"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth="2"
+                d="M13 13h3a3 3 0 0 0 0-6h-.025A5.56 5.56 0 0 0 16 6.5 5.5 5.5 0 0 0 5.207 5.021C5.137 5.017 5.071 5 5 5a4 4 0 0 0 0 8h2.167M10 15V6m0 0L8 8m2-2 2 2"
+              />
             </svg>
             <p className="mb-2 text-muted small">
               <strong>Click Untuk upload</strong> atau drag and drop
@@ -437,7 +563,11 @@ const DragDropFile = (props) => {
           }}
           onMouseOver={(e) => (e.currentTarget.style.opacity = "0.5")}
           onMouseOut={(e) => (e.currentTarget.style.opacity = "1")}>
-          <img src={formState?.imageUrl || BASE_URL_STORAGE + formState?.image_path} className="rounded h-100 w-100 p-2 object-fit-contain" alt="image" />
+          <img
+            src={formState?.imageUrl || BASE_URL_STORAGE + formState?.image_path}
+            className="rounded h-100 w-100 p-2 object-fit-contain"
+            alt="image"
+          />
         </div>
       ) : (
         ""

@@ -49,7 +49,6 @@ const ProvincePage = (props) => {
     setIsShowModalDelete(false);
   };
   const handleAdd = () => {
-    // console.log("formState", formState);
     addProvince(formState);
     // setIsShowModal(false);
   };
@@ -64,7 +63,9 @@ const ProvincePage = (props) => {
   useEffect(() => {
     if (provinces) {
       const filteredItems = provinces?.filter((item) => {
-        const isTextMatch = item?.id?.toLowerCase()?.includes(filterText?.toLowerCase()) || item?.name?.toLowerCase()?.includes(filterText?.toLowerCase());
+        const isTextMatch =
+          item?.id?.toLowerCase()?.includes(filterText?.toLowerCase()) ||
+          item?.name?.toLowerCase()?.includes(filterText?.toLowerCase());
 
         return isTextMatch;
       });
@@ -83,15 +84,45 @@ const ProvincePage = (props) => {
             </div>
             <div class="col-auto ms-auto d-print-none">
               <div class="btn-list">
-                <a href="#" class="btn btn-primary btn-5 d-none d-sm-inline-block" data-bs-toggle="modal" data-bs-target="#modal-form" onClick={openModal}>
-                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-2">
+                <a
+                  href="#"
+                  class="btn btn-primary btn-5 d-none d-sm-inline-block"
+                  data-bs-toggle="modal"
+                  data-bs-target="#modal-form"
+                  onClick={openModal}>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    class="icon icon-2">
                     <path d="M12 5l0 14" />
                     <path d="M5 12l14 0" />
                   </svg>
                   Tambah provinsi
                 </a>
-                <a href="#" class="btn btn-primary btn-6 d-sm-none btn-icon" data-bs-toggle="modal" data-bs-target="#modal-form" onClick={openModal}>
-                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-2">
+                <a
+                  href="#"
+                  class="btn btn-primary btn-6 d-sm-none btn-icon"
+                  data-bs-toggle="modal"
+                  data-bs-target="#modal-form"
+                  onClick={openModal}>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    class="icon icon-2">
                     <path d="M12 5l0 14" />
                     <path d="M5 12l14 0" />
                   </svg>
@@ -116,7 +147,17 @@ const ProvincePage = (props) => {
                       <div className="col-md-3 col-12 my-md-0 my-2">
                         <div class="input-group input-group-flat w-auto">
                           <span class="input-group-text">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-1">
+                            <svg
+                              xmlns="http://www.w3.org/2000/svg"
+                              width="24"
+                              height="24"
+                              viewBox="0 0 24 24"
+                              fill="none"
+                              stroke="currentColor"
+                              stroke-width="2"
+                              stroke-linecap="round"
+                              stroke-linejoin="round"
+                              class="icon icon-1">
                               <path d="M10 10m-7 0a7 7 0 1 0 14 0a7 7 0 1 0 -14 0" />
                               <path d="M21 21l-6 -6" />
                             </svg>
@@ -209,7 +250,17 @@ const ProvincePage = (props) => {
                                           });
                                           setIsShowModal(true);
                                         }}>
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-edit">
+                                        <svg
+                                          xmlns="http://www.w3.org/2000/svg"
+                                          width="24"
+                                          height="24"
+                                          viewBox="0 0 24 24"
+                                          fill="none"
+                                          stroke="currentColor"
+                                          stroke-width="2"
+                                          stroke-linecap="round"
+                                          stroke-linejoin="round"
+                                          class="icon icon-tabler icons-tabler-outline icon-tabler-edit">
                                           <path stroke="none" d="M0 0h24v24H0z" fill="none" />
                                           <path d="M7 7h-1a2 2 0 0 0 -2 2v9a2 2 0 0 0 2 2h9a2 2 0 0 0 2 -2v-1" />
                                           <path d="M20.385 6.585a2.1 2.1 0 0 0 -2.97 -2.97l-8.415 8.385v3h3l8.385 -8.415z" />
@@ -229,7 +280,17 @@ const ProvincePage = (props) => {
                                             name: province?.name,
                                           });
                                         }}>
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="icon icon-tabler icons-tabler-outline icon-tabler-trash">
+                                        <svg
+                                          xmlns="http://www.w3.org/2000/svg"
+                                          width="24"
+                                          height="24"
+                                          viewBox="0 0 24 24"
+                                          fill="none"
+                                          stroke="currentColor"
+                                          stroke-width="2"
+                                          stroke-linecap="round"
+                                          stroke-linejoin="round"
+                                          class="icon icon-tabler icons-tabler-outline icon-tabler-trash">
                                           <path stroke="none" d="M0 0h24v24H0z" fill="none" />
                                           <path d="M4 7l16 0" />
                                           <path d="M10 11l0 6" />
@@ -285,7 +346,9 @@ const ProvincePage = (props) => {
                         })}
 
                         <li className={`page-item ${currentPage === totalPages ? "disabled" : ""}`}>
-                          <button className="page-link" onClick={() => setCurrentPage((prev) => Math.min(prev + 1, totalPages))}>
+                          <button
+                            className="page-link"
+                            onClick={() => setCurrentPage((prev) => Math.min(prev + 1, totalPages))}>
                             next
                             <svg width="24" height="24" stroke="currentColor" fill="none" viewBox="0 0 24 24">
                               <path d="M9 6l6 6l-6 6" />
@@ -301,8 +364,21 @@ const ProvincePage = (props) => {
           </div>
         </div>
       </div>
-      <FormProvince isShowModal={isShowModal} isEdit={isEdit} closeModal={closeModal} formState={formState} setFormState={setFormState} handleAdd={handleAdd} handleEdit={handleEdit} />
-      <ModalDelete labelModal={formState?.name} isShowModal={isShowModalDelete} closeModal={closeModalDelete} handleDelete={handleDelete} />
+      <FormProvince
+        isShowModal={isShowModal}
+        isEdit={isEdit}
+        closeModal={closeModal}
+        formState={formState}
+        setFormState={setFormState}
+        handleAdd={handleAdd}
+        handleEdit={handleEdit}
+      />
+      <ModalDelete
+        labelModal={formState?.name}
+        isShowModal={isShowModalDelete}
+        closeModal={closeModalDelete}
+        handleDelete={handleDelete}
+      />
       {/* <OverlayLoading isShow={isLoading} /> */}
     </div>
   );

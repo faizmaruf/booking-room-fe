@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useMemo } from "react";
 import { Calendar, dateFnsLocalizer } from "react-big-calendar";
 import { format, parse, startOfWeek, getDay, add } from "date-fns";
 import idLocale from "date-fns/locale/id";
@@ -13,12 +13,14 @@ import {
   approveBooking,
   rejectBooking,
   updateBooking,
+  deleteBooking,
 } from "../../actions/bookingAction";
 import { fetchRooms } from "../../actions/roomAction";
 import UserAvatar from "../../components/UserAvatar";
 import FormBooking from "./FormBooking";
 
 import Swal from "sweetalert2";
+import ModalDelete from "../../components/Modals/ModalDelete";
 
 // Locale untuk bahasa Indonesia
 const locales = {
@@ -90,7 +92,7 @@ const EventCard = ({ event }) => {
     </div>
   );
 };
-const EventAgenda = ({ event, cancelBooking, approveBooking, rejectBooking, setFormState, setIsEdit }) => {
+const EventAgenda = ({ event, cancelBooking, approveBooking, rejectBooking, setFormState, setIsEdit, permissions }) => {
   const bookingStatusBgColor = {
     approved: "bg-success",
     pending: "bg-info",
@@ -241,27 +243,31 @@ const EventAgenda = ({ event, cancelBooking, approveBooking, rejectBooking, setF
       </div>
       {event.status === "pending" ? (
         <span style={{ marginLeft: "auto" }}>
-          <a
-            class="btn btn-1 bg-danger-lt me-3 p-1"
-            style={{
-              fontSize: "0.6rem",
-            }}
-            onClick={() => {
-              handleRejectEvent(event.id, event);
-            }}>
-            Reject
-          </a>
-          <a
-            href="#"
-            class="btn btn-1 bg-success-lt me-3 p-1"
-            style={{
-              fontSize: "0.6rem",
-            }}
-            onClick={() => {
-              handleApproveEvent(event);
-            }}>
-            Approve
-          </a>
+          {permissions?.some((item) => item?.slug == "view-reports") && (
+            <>
+              <a
+                class="btn btn-1 bg-danger-lt me-3 p-1"
+                style={{
+                  fontSize: "0.6rem",
+                }}
+                onClick={() => {
+                  handleRejectEvent(event.id, event);
+                }}>
+                Reject
+              </a>
+              <a
+                href="#"
+                class="btn btn-1 bg-success-lt me-3 p-1"
+                style={{
+                  fontSize: "0.6rem",
+                }}
+                onClick={() => {
+                  handleApproveEvent(event);
+                }}>
+                Approve
+              </a>
+            </>
+          )}
           <a
             data-bs-toggle="modal"
             data-bs-target="#modal-booking"
@@ -289,6 +295,43 @@ const EventAgenda = ({ event, cancelBooking, approveBooking, rejectBooking, setF
               <path d="M18.375 2.625a1 1 0 0 1 3 3l-9.013 9.014a2 2 0 0 1-.853.505l-2.873.84a.5.5 0 0 1-.62-.62l.84-2.873a2 2 0 0 1 .506-.852z" />
             </svg>
           </a>
+          <a
+            href="#"
+            class="btn btn-1 bg-danger-lt m-0 p-1"
+            data-bs-toggle="modal"
+            data-bs-target="#modal-delete"
+            onClick={() => {
+              setFormState({
+                id: event.id,
+                title: event.title,
+                name: event.purpose,
+                start: event.start,
+                end: event.end,
+                room_id: event.room_id,
+                room_name: event.room_name,
+                status: event.status,
+              });
+            }}>
+            {" "}
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              class="icon icon-tabler icons-tabler-outline icon-tabler-trash m-0">
+              <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+              <path d="M4 7l16 0" />
+              <path d="M10 11l0 6" />
+              <path d="M14 11l0 6" />
+              <path d="M5 7l1 12a2 2 0 0 0 2 2h8a2 2 0 0 0 2 -2l1 -12" />
+              <path d="M9 7v-3a1 1 0 0 1 1 -1h4a1 1 0 0 1 1 1v3" />
+            </svg>
+          </a>
         </span>
       ) : (
         ""
@@ -309,7 +352,9 @@ const BookingPage = (props) => {
     fetchRooms,
     rooms,
     updateBooking,
+    deleteBooking,
   } = props;
+  const [isShowModalDelete, setIsShowModalDelete] = useState(false);
   const [view, setView] = useState("week"); // state untuk kontrol view
   const [date, setDate] = useState(new Date());
   const initialFormState = {
@@ -328,8 +373,6 @@ const BookingPage = (props) => {
   const [isShowModal, setIsShowModal] = useState(false);
 
   const handleAdd = async (data) => {
-    console.log(data);
-
     await addBooking(data);
     // setIsEdit(false);
     // setIsShowModal(true);
@@ -345,13 +388,24 @@ const BookingPage = (props) => {
     setFormState(initialFormState);
     setIsEdit(false);
   };
+  const openModalDelete = () => {
+    setFormState(initialFormState);
+    setIsShowModalDelete(true);
+  };
+  const closeModalDelete = () => {
+    setFormState(initialFormState);
+    setIsShowModalDelete(false);
+  };
+  const handleDelete = () => {
+    deleteBooking(formState?.id);
+  };
 
   useEffect(() => {
     fetchBookings();
     fetchRooms();
   }, []);
 
-  const events = bookings.map((item) => {
+  const events = bookings?.map((item) => {
     const start = new Date(`${item.booking_date}T${item.start_time}`);
     const end = new Date(`${item.booking_date}T${item.end_time}`);
 
@@ -435,6 +489,15 @@ const BookingPage = (props) => {
 
     return () => observer.disconnect();
   }, []);
+  const userProfile = useMemo(() => {
+    const dataProfile = localStorage.getItem("userProfile");
+    try {
+      return dataProfile ? JSON.parse(dataProfile) : null;
+    } catch {
+      return null;
+    }
+  }, []);
+  const permissions = userProfile?.permissions;
 
   return (
     <div className="page-wrapper">
@@ -559,6 +622,7 @@ const BookingPage = (props) => {
                                 cancelBooking={cancelBooking}
                                 setFormState={setFormState}
                                 setIsEdit={setIsEdit}
+                                permissions={permissions}
                               />
                             ),
                           },
@@ -613,6 +677,12 @@ const BookingPage = (props) => {
         events={events}
         initialFormState={initialFormState}
       />
+      <ModalDelete
+        labelModal={formState?.name}
+        isShowModal={isShowModalDelete}
+        closeModal={closeModalDelete}
+        handleDelete={handleDelete}
+      />
     </div>
   );
 };
@@ -631,4 +701,5 @@ export default connect(mapStateToProps, {
   rejectBooking,
   fetchRooms,
   updateBooking,
+  deleteBooking,
 })(BookingPage);

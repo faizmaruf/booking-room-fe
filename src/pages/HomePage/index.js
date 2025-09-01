@@ -1,7 +1,7 @@
 import Swal from "sweetalert2";
 import Chart from "react-apexcharts";
 
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useMemo } from "react";
 import { Calendar, dateFnsLocalizer } from "react-big-calendar";
 import { format, parse, startOfWeek, getDay, add } from "date-fns";
 import idLocale from "date-fns/locale/id";
@@ -103,6 +103,15 @@ const HomePage = (props) => {
     getBookingsByRoom,
     totalDataBookingsRoom,
   } = props;
+  const userProfile = useMemo(() => {
+    const dataProfile = localStorage.getItem("userProfile");
+    try {
+      return dataProfile ? JSON.parse(dataProfile) : null;
+    } catch {
+      return null;
+    }
+  }, []);
+  const permissions = userProfile?.permissions;
   const [view, setView] = useState("month"); // state untuk kontrol view
   const [date, setDate] = useState(new Date());
   const displayMonth = format(date, "MMMM yyyy", { locale: id });
@@ -559,26 +568,36 @@ const HomePage = (props) => {
                 </div>
               </div>
             </div>
-            <div class="col-lg-9">
-              <div class="card">
-                <div class="card-body">
-                  <h3 class="card-title">Unit Peminjam Terbanyak</h3>
-                  <div id="chart-mentions" class="chart-lg">
-                    <Chart options={options} series={series} type="bar" width="100%" height="100%" />
+            {permissions?.some((item) => item?.slug == "view-reports") && (
+              <>
+                <div class="col-lg-9">
+                  <div class="card">
+                    <div class="card-body">
+                      <h3 class="card-title">Unit Peminjam Terbanyak</h3>
+                      <div id="chart-mentions" class="chart-lg">
+                        <Chart options={options} series={series} type="bar" width="100%" height="100%" />
+                      </div>
+                    </div>
                   </div>
                 </div>
-              </div>
-            </div>
-            <div class="col-lg-3">
-              <div class="card">
-                <div class="card-body">
-                  <h3 class="card-title">Aula Sering Digunakan</h3>
-                  <div id="pie-chart" class="chart-lg">
-                    <Chart options={optionsPieChart} series={seriesPieChart} type="donut" width="100%" height="100%" />
+                <div class="col-lg-3">
+                  <div class="card">
+                    <div class="card-body">
+                      <h3 class="card-title">Aula Sering Digunakan</h3>
+                      <div id="pie-chart" class="chart-lg">
+                        <Chart
+                          options={optionsPieChart}
+                          series={seriesPieChart}
+                          type="donut"
+                          width="100%"
+                          height="100%"
+                        />
+                      </div>
+                    </div>
                   </div>
                 </div>
-              </div>
-            </div>
+              </>
+            )}
           </div>
         </div>
       </div>

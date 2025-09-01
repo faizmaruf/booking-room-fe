@@ -30,6 +30,30 @@ export const fetchRooms = (limit = 100, page = 1) => {
     }
   };
 };
+export const fetchRoomsPublic = (limit = 100, page = 1) => {
+  return async (dispatch) => {
+    dispatch({ type: SET_ROOMS_LOADING, status: true });
+
+    try {
+      const response = await authorizedAxios.get("/public/rooms?limit=" + limit + "&page=" + page);
+
+      if (response.status === 200 || response.status === 201) {
+        dispatch({
+          type: SET_ROOMS,
+          data: response?.data?.data,
+        });
+      }
+    } catch (error) {
+      console.error("error", error);
+      dispatch({
+        type: SET_ROOMS_ERROR,
+        error: error?.response?.data || "Terjadi kesalahan saat mengambil data.",
+      });
+    } finally {
+      dispatch({ type: SET_ROOMS_LOADING, status: false });
+    }
+  };
+};
 
 export const getRoomById = (id) => {
   return async (dispatch) => {

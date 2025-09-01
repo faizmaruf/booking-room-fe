@@ -33,6 +33,30 @@ export const fetchBookings = (limit = 100, page = 1) => {
     }
   };
 };
+export const fetchBookingsPublic = (limit = 100, page = 1) => {
+  return async (dispatch) => {
+    dispatch({ type: SET_BOOKINGS_LOADING, status: true });
+
+    try {
+      const response = await authorizedAxios.get("public/bookings?limit=" + limit + "&page=" + page);
+
+      if (response.status === 200 || response.status === 201) {
+        dispatch({
+          type: SET_BOOKINGS,
+          data: response?.data?.data,
+        });
+      }
+    } catch (error) {
+      console.error("error", error);
+      dispatch({
+        type: SET_BOOKINGS_ERROR,
+        error: error?.response?.data || "Terjadi kesalahan saat mengambil data.",
+      });
+    } finally {
+      dispatch({ type: SET_BOOKINGS_LOADING, status: false });
+    }
+  };
+};
 
 export const getBookingById = (id) => {
   return async (dispatch) => {

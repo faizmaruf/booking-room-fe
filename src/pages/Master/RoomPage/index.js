@@ -102,9 +102,7 @@ const RoomPage = (props) => {
     } else {
       setFormState((prevFormState) => ({
         ...prevFormState,
-        permissions: prevFormState.permissions.filter(
-          (item) => item?.id !== id
-        ),
+        permissions: prevFormState.permissions.filter((item) => item?.id !== id),
       }));
     }
   };
@@ -130,9 +128,7 @@ const RoomPage = (props) => {
     if (typeof text !== "string") return "";
 
     const words = text.trim().split(/\s+/); // Pisah berdasarkan spasi
-    return words.length > maxWords
-      ? words.slice(0, maxWords).join(" ") + "..."
-      : text;
+    return words.length > maxWords ? words.slice(0, maxWords).join(" ") + "..." : text;
   };
 
   useEffect(() => {
@@ -151,8 +147,6 @@ const RoomPage = (props) => {
       setItems(filteredItems);
     }
   }, [rooms, filterText]);
-
-  // console.log("formState", paginatedItems);
 
   return (
     <div class="page-wrapper">
@@ -223,9 +217,7 @@ const RoomPage = (props) => {
                     <div class="row w-full">
                       <div class="col-md-9 col-12">
                         <h3 class="card-title mb-0">Room</h3>
-                        <p class="text-secondary m-0">
-                          Master Room di Booking Room
-                        </p>
+                        <p class="text-secondary m-0">Master Room di Booking Room</p>
                       </div>
                       <div className="col-md-3 col-12 my-md-0 my-2">
                         <div class="input-group input-group-flat w-auto">
@@ -265,45 +257,33 @@ const RoomPage = (props) => {
                         <thead>
                           <tr>
                             <th>
-                              <button
-                                class="table-sort d-flex justify-content-between"
-                                data-sort="sort-name">
+                              <button class="table-sort d-flex justify-content-between" data-sort="sort-name">
                                 No
                               </button>
                             </th>
                             <th>
-                              <button
-                                class="table-sort d-flex justify-content-between"
-                                data-sort="sort-city">
+                              <button class="table-sort d-flex justify-content-between" data-sort="sort-city">
                                 Room
                               </button>
                             </th>
                             <th>
-                              <button
-                                class="table-sort d-flex justify-content-between"
-                                data-sort="sort-city">
+                              <button class="table-sort d-flex justify-content-between" data-sort="sort-city">
                                 Kapasitas
                               </button>
                             </th>
                             <th>
-                              <button
-                                class="table-sort d-flex justify-content-between"
-                                data-sort="sort-city">
+                              <button class="table-sort d-flex justify-content-between" data-sort="sort-city">
                                 Deskripsi
                               </button>
                             </th>
                             <th>
-                              <button
-                                class="table-sort d-flex justify-content-between"
-                                data-sort="sort-city">
+                              <button class="table-sort d-flex justify-content-between" data-sort="sort-city">
                                 PIC Ruangan
                               </button>
                             </th>
 
                             <th>
-                              <button
-                                class="table-sort d-flex justify-content-between"
-                                data-sort="sort-status">
+                              <button class="table-sort d-flex justify-content-between" data-sort="sort-status">
                                 Foto
                               </button>
                             </th>
@@ -321,9 +301,7 @@ const RoomPage = (props) => {
                                   style={{
                                     cursor: "loader",
                                   }}>
-                                  <td className="sort-name py-3">
-                                    {(currentPage - 1) * perPage + index + 1}.
-                                  </td>
+                                  <td className="sort-name py-3">{(currentPage - 1) * perPage + index + 1}.</td>
                                   {[...Array(3)]?.map((_, i) => (
                                     <td key={i} className="w-25">
                                       <div className="placeholder placeholder-lg w-75"></div>
@@ -339,9 +317,7 @@ const RoomPage = (props) => {
                               ))
                             : paginatedItems?.map((room, index) => (
                                 <tr key={room?.id}>
-                                  <td className="sort-name">
-                                    {(currentPage - 1) * perPage + index + 1}.
-                                  </td>
+                                  <td className="sort-name">{(currentPage - 1) * perPage + index + 1}.</td>
                                   <td className="sort-city">{room?.name}</td>
                                   <td className="sort-city">
                                     {room?.capacity}{" "}
@@ -362,12 +338,8 @@ const RoomPage = (props) => {
                                       <circle cx="9" cy="7" r="4" />
                                     </svg>
                                   </td>
-                                  <td className="sort-city">
-                                    {ellipsisByWords(room?.description, 15)}
-                                  </td>
-                                  <td className="sort-city">
-                                    {room?.pic_name}
-                                  </td>
+                                  <td className="sort-city">{ellipsisByWords(room?.description, 15)}</td>
+                                  <td className="sort-city">{room?.pic_name}</td>
                                   <td className="sort-status">
                                     {/* {room?.images?.map((image, idx) => (
                                       <UserAvatar fullName={room?.name} imageUrl={image?.image_path} size="md" className="avatar avatar-lg m-1 shadow" />
@@ -413,11 +385,7 @@ const RoomPage = (props) => {
                                           stroke-linecap="round"
                                           stroke-linejoin="round"
                                           class="icon icon-tabler icons-tabler-outline icon-tabler-edit">
-                                          <path
-                                            stroke="none"
-                                            d="M0 0h24v24H0z"
-                                            fill="none"
-                                          />
+                                          <path stroke="none" d="M0 0h24v24H0z" fill="none" />
                                           <path d="M7 7h-1a2 2 0 0 0 -2 2v9a2 2 0 0 0 2 2h9a2 2 0 0 0 2 -2v-1" />
                                           <path d="M20.385 6.585a2.1 2.1 0 0 0 -2.97 -2.97l-8.415 8.385v3h3l8.385 -8.415z" />
                                           <path d="M16 5l3 3" />
@@ -473,9 +441,7 @@ const RoomPage = (props) => {
                     </div>
                     <div className="card-footer d-flex align-items-center">
                       <div className="dropdown">
-                        <button
-                          className="btn dropdown-toggle"
-                          data-bs-toggle="dropdown">
+                        <button className="btn dropdown-toggle" data-bs-toggle="dropdown">
                           <span id="page-count" className="me-1">
                             {perPage}
                           </span>
@@ -483,10 +449,7 @@ const RoomPage = (props) => {
                         </button>
                         <div className="dropdown-menu">
                           {[50, 100, 250]?.map((value) => (
-                            <button
-                              key={value}
-                              className="dropdown-item"
-                              onClick={() => handlePerPageChange(value)}>
+                            <button key={value} className="dropdown-item" onClick={() => handlePerPageChange(value)}>
                               {value} records
                             </button>
                           ))}
@@ -494,27 +457,14 @@ const RoomPage = (props) => {
                       </div>
                       <div className="d-flex ">
                         <p class="ms-2 my-auto text-secondary">
-                          {paginatedItems?.length} dari{" "}
-                          <span>{total_data}</span> <span>data</span>
+                          {paginatedItems?.length} dari <span>{total_data}</span> <span>data</span>
                         </p>
                       </div>
 
                       <ul className="pagination m-0 ms-auto">
-                        <li
-                          className={`page-item ${
-                            currentPage === 1 ? "disabled" : ""
-                          }`}>
-                          <button
-                            className="page-link"
-                            onClick={() =>
-                              setCurrentPage((prev) => Math.max(prev - 1, 1))
-                            }>
-                            <svg
-                              width="24"
-                              height="24"
-                              stroke="currentColor"
-                              fill="none"
-                              viewBox="0 0 24 24">
+                        <li className={`page-item ${currentPage === 1 ? "disabled" : ""}`}>
+                          <button className="page-link" onClick={() => setCurrentPage((prev) => Math.max(prev - 1, 1))}>
+                            <svg width="24" height="24" stroke="currentColor" fill="none" viewBox="0 0 24 24">
                               <path d="M15 6l-6 6l6 6" />
                             </svg>
                             prev
@@ -524,38 +474,20 @@ const RoomPage = (props) => {
                         {[...Array(totalPages)]?.map((_, idx) => {
                           const page = idx + 1;
                           return (
-                            <li
-                              key={page}
-                              className={`page-item ${
-                                currentPage === page ? "active" : ""
-                              }`}>
-                              <button
-                                className="page-link"
-                                onClick={() => setCurrentPage(page)}>
+                            <li key={page} className={`page-item ${currentPage === page ? "active" : ""}`}>
+                              <button className="page-link" onClick={() => setCurrentPage(page)}>
                                 {page}
                               </button>
                             </li>
                           );
                         })}
 
-                        <li
-                          className={`page-item ${
-                            currentPage === totalPages ? "disabled" : ""
-                          }`}>
+                        <li className={`page-item ${currentPage === totalPages ? "disabled" : ""}`}>
                           <button
                             className="page-link"
-                            onClick={() =>
-                              setCurrentPage((prev) =>
-                                Math.min(prev + 1, totalPages)
-                              )
-                            }>
+                            onClick={() => setCurrentPage((prev) => Math.min(prev + 1, totalPages))}>
                             next
-                            <svg
-                              width="24"
-                              height="24"
-                              stroke="currentColor"
-                              fill="none"
-                              viewBox="0 0 24 24">
+                            <svg width="24" height="24" stroke="currentColor" fill="none" viewBox="0 0 24 24">
                               <path d="M9 6l6 6l-6 6" />
                             </svg>
                           </button>

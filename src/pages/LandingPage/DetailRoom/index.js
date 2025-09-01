@@ -77,7 +77,7 @@ const DetailRoom = (props) => {
           <div class="modal-footer">
             <a href="#" class="btn btn-link link-secondary btn-3" data-bs-dismiss="modal" onClick={closeModal}>
               {" "}
-              Cancel{" "}
+              Tutup{" "}
             </a>
             {/* {isEdit ? (
               <a href="#" class="btn bg-secondary-lt btn-5 ms-auto" data-bs-dismiss="modal" onClick={handleUpdate}>
