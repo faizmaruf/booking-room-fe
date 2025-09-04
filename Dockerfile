@@ -5,8 +5,8 @@ WORKDIR /app
 COPY package*.json ./
 
 # Paksa install agar tetap jalan
-RUN npm cache clean --force
-RUN npm install --force
+# RUN npm cache clean --force
+# RUN npm install --force
 
 COPY . .
 
