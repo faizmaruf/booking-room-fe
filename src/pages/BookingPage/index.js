@@ -21,6 +21,8 @@ import FormBooking from "./FormBooking";
 
 import Swal from "sweetalert2";
 import ModalDelete from "../../components/Modals/ModalDelete";
+import { BASE_URL_STORAGE } from "../../helpers/config";
+import { fileToBase64, urlToBase64 } from "../../utils/helpers/fileToBase64";
 
 // Locale untuk bahasa Indonesia
 const locales = {
@@ -275,9 +277,13 @@ const EventAgenda = ({ event, cancelBooking, approveBooking, rejectBooking, setF
             style={{
               fontSize: "0.6rem",
             }}
-            onClick={() => {
+            onClick={async () => {
               setIsEdit(true);
-              setFormState({ ...event, booking_date: event.start.toISOString().split("T")[0] });
+              setFormState({
+                ...event,
+                booking_date: event.start.toISOString().split("T")[0],
+                attachment_file_url: event?.attachment_file,
+              });
             }}>
             {" "}
             <svg
@@ -302,14 +308,14 @@ const EventAgenda = ({ event, cancelBooking, approveBooking, rejectBooking, setF
             data-bs-target="#modal-delete"
             onClick={() => {
               setFormState({
-                id: event.id,
-                title: event.title,
-                name: event.purpose,
-                start: event.start,
-                end: event.end,
-                room_id: event.room_id,
-                room_name: event.room_name,
-                status: event.status,
+                id: event?.id,
+                title: event?.title,
+                name: event?.purpose,
+                start: event?.start,
+                end: event?.end,
+                room_id: event?.room_id,
+                room_name: event?.room_name,
+                status: event?.status,
               });
             }}>
             {" "}
@@ -366,6 +372,7 @@ const BookingPage = (props) => {
     end_time: "",
     purpose: "",
     status: "pending",
+    attachment_file_path: null,
   };
 
   const [formState, setFormState] = useState(initialFormState);
@@ -408,6 +415,7 @@ const BookingPage = (props) => {
   const events = bookings?.map((item) => {
     const start = new Date(`${item.booking_date}T${item.start_time}`);
     const end = new Date(`${item.booking_date}T${item.end_time}`);
+    const attachment_file_path = item?.attachment_file_path ? BASE_URL_STORAGE + item?.attachment_file_path : null;
 
     return {
       id: item.id,
@@ -436,6 +444,7 @@ const BookingPage = (props) => {
       cancelled_by: item.cancelled_by,
       cancelled_at: item.cancelled_at,
       cancelled_by_name: item.cancelled_by_name,
+      attachment_file: attachment_file_path,
     };
   });
   const eventStyleGetter = (event) => {
@@ -693,6 +702,7 @@ const mapStateToProps = (state) => ({
   error: state?.bookings?.error,
   rooms: state?.rooms?.datas?.data || [],
 });
+
 export default connect(mapStateToProps, {
   addBooking,
   fetchBookings,

@@ -10,6 +10,8 @@ import startOfWeek from "date-fns/startOfWeek";
 import getDay from "date-fns/getDay";
 import { Calendar, dateFnsLocalizer } from "react-big-calendar";
 import { set } from "date-fns";
+import { fileToBase64 } from "../../../utils/helpers/fileToBase64";
+import { BASE_URL_STORAGE } from "../../../helpers/config";
 const locales = {
   "id-ID": idLocale,
 };
@@ -134,27 +136,6 @@ const FormBooking = (props) => {
 
     return () => observer.disconnect();
   }, []);
-
-  // useEffect(() => {
-  //   const target = document.body;
-
-  //   const observer = new MutationObserver(() => {
-  //     if (target.classList.contains("modal-open")) {
-  //       if (formState?.booking_date && formState?.room_id) {
-  //         buttonRef.current?.click();
-  //       }
-  //     } else {
-  //       buttonRef.current?.click();
-  //     }
-  //   });
-
-  //   observer.observe(target, {
-  //     attributes: true,
-  //     attributeFilter: ["class"],
-  //   });
-
-  //   return () => observer.disconnect();
-  // }, []);
 
   return (
     <div
@@ -390,7 +371,7 @@ const FormBooking = (props) => {
                 </div>
               </div>
               <div class="col-lg-12">
-                <label class="form-label">Tujuan Booking</label>
+                <label class="form-label">Acara / Agenda</label>
                 <div class="mb-3 input-icon">
                   <span class="input-icon-addon">
                     <svg
@@ -421,6 +402,196 @@ const FormBooking = (props) => {
                       }))
                     }
                   />
+                </div>
+              </div>
+              <div class="col-lg-12">
+                <label class="form-label">File bukti</label>
+                <div class="mb-3 w-100 ">
+                  <div
+                    className="card  d-flex justify-content-center align-content-center w-100 "
+                    style={{
+                      border: formState?.attachment_file_path ? "none" : "1px solid #e9e9e9",
+                    }}>
+                    <DragDropFile setFormState={setFormState} formState={formState} />
+                    {formState?.attachment_file_path && (
+                      <div
+                        className="list-group my-1 mx-1 d-flex flex-column gap-2 shadow-sm mt-4"
+                        style={{
+                          maxHeight: "21.7em",
+                          overflowY: "auto",
+                          overflowX: "hidden",
+                        }}>
+                        <div
+                          // key={file.id}
+                          className="list-group-item d-flex align-items-center shadow-sm"
+                          style={{
+                            border: "1px solid #e9ecef",
+                            borderRadius: "0.5rem",
+                            padding: "0.5rem",
+                            width: "100%",
+                            boxSizing: "border-box",
+                          }}>
+                          {/* set main image button */}
+                          <div className="d-flex align-items-center justify-content-center me-3"></div>
+                          {/* Preview file */}
+                          <div className="d-flex align-items-center justify-content-center">
+                            <object
+                              data={formState?.file_url}
+                              style={{
+                                borderRadius: "0.2rem",
+                                height: "3.8em",
+                                objectFit: "cover",
+                                // padding: "0 0.5rem",
+                                width: "6.8em",
+                              }}
+                              className="object-fit-cover border rounded">
+                              {/* Fallback text atau komponen yang ditampilkan jika browser tidak mendukung objek ini */}
+                              {/* <p>File tidak dapat ditampilkan</p> */}
+                            </object>
+                          </div>
+
+                          {/* File details */}
+                          <div className="d-flex flex-column w-100 justify-content-start ms-3">
+                            <span className="fw-bold">{formState?.file_name}</span>
+                            <small className="text-muted">{formState?.file_size} MB</small>
+                          </div>
+
+                          {/* Delete button */}
+                          <div className="d-flex align-items-center justify-content-center">
+                            <button
+                              className="btn btn-outline-danger btn-sm"
+                              onClick={() => {
+                                setFormState((prev) => ({
+                                  ...prev,
+                                  file_url: null,
+                                  file_name: null,
+                                  file_size: null,
+                                  attachment_file_path: null,
+                                }));
+                              }}
+                              type="button"
+                              title="Hapus File"
+                              style={{
+                                borderRadius: "0.5rem",
+                                padding: "0.5rem",
+                              }}
+                              // onClick={() => handleDelete(file.id)}
+                              // disabled={loading}
+                            >
+                              <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                width="20"
+                                height="20"
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                stroke="currentColor"
+                                stroke-width="1.5"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                                class="lucide lucide-trash2-icon lucide-trash-2">
+                                <path d="M10 11v6" />
+                                <path d="M14 11v6" />
+                                <path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6" />
+                                <path d="M3 6h18" />
+                                <path d="M8 6V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2" />
+                              </svg>
+                            </button>
+                          </div>
+                        </div>
+                      </div>
+                    )}
+                    {formState?.attachment_file_url ? (
+                      <div
+                        className="list-group my-1 mx-1 d-flex flex-column gap-2 shadow-sm mt-4"
+                        style={{
+                          maxHeight: "21.7em",
+                          overflowY: "auto",
+                          overflowX: "hidden",
+                        }}>
+                        <div
+                          // key={file.id}
+                          className="list-group-item d-flex align-items-center shadow-sm"
+                          style={{
+                            border: "1px solid #e9ecef",
+                            borderRadius: "0.5rem",
+                            padding: "0.5rem",
+                            width: "100%",
+                            boxSizing: "border-box",
+                          }}>
+                          {/* set main image button */}
+                          <div className="d-flex align-items-center justify-content-center me-3"></div>
+                          {/* Preview file */}
+                          <div className="d-flex align-items-center justify-content-center">
+                            <object
+                              data={formState?.attachment_file_url}
+                              style={{
+                                borderRadius: "0.2rem",
+                                height: "3.8em",
+                                objectFit: "cover",
+                                // padding: "0 0.5rem",
+                                width: "6.8em",
+                              }}
+                              className="object-fit-cover border rounded">
+                              {/* Fallback text atau komponen yang ditampilkan jika browser tidak mendukung objek ini */}
+                              {/* <p>File tidak dapat ditampilkan</p> */}
+                            </object>
+                          </div>
+
+                          {/* File details */}
+                          <div className="d-flex flex-column w-100 justify-content-start ms-3">
+                            <span className="fw-bold">{formState?.attachment_file_url?.split("/").pop()}</span>
+                            <small className="text-muted">1 MB</small>
+                          </div>
+
+                          {/* Delete button */}
+                          <div className="d-flex align-items-center justify-content-center">
+                            <button
+                              className="btn btn-outline-danger btn-sm"
+                              onClick={() => {
+                                setFormState((prev) => ({
+                                  ...prev,
+                                  file_url: null,
+                                  file_name: null,
+                                  file_size: null,
+                                  attachment_file_path: null,
+                                  attachment_file_url: null,
+                                  attachment_file: null,
+                                }));
+                              }}
+                              type="button"
+                              title="Hapus File"
+                              style={{
+                                borderRadius: "0.5rem",
+                                padding: "0.5rem",
+                              }}
+                              // onClick={() => handleDelete(file.id)}
+                              // disabled={loading}
+                            >
+                              <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                width="20"
+                                height="20"
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                stroke="currentColor"
+                                stroke-width="1.5"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                                class="lucide lucide-trash2-icon lucide-trash-2">
+                                <path d="M10 11v6" />
+                                <path d="M14 11v6" />
+                                <path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6" />
+                                <path d="M3 6h18" />
+                                <path d="M8 6V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2" />
+                              </svg>
+                            </button>
+                          </div>
+                        </div>
+                      </div>
+                    ) : (
+                      ""
+                    )}
+                  </div>
                 </div>
               </div>
             </div>
@@ -487,6 +658,68 @@ const FormBooking = (props) => {
         </div>
       </div>
     </div>
+  );
+};
+const DragDropFile = (props) => {
+  const { setFormState, formState } = props;
+  const fileTypes = ["PDF"];
+
+  return (
+    <FileUploader
+      multiple={false}
+      handleChange={async (file) => {
+        if (file.length !== 0) {
+          const base64 = await fileToBase64(file);
+
+          setFormState({
+            ...formState,
+            attachment_file_path: base64,
+            file_url: URL.createObjectURL(file),
+            file_name: file?.name,
+            // convert kb to mb size
+            file_size: (file?.size / 1024 / 1024).toFixed(2),
+            file_type: file?.type,
+            attachment_file_url: null,
+          });
+        }
+      }}
+      name="file"
+      types={fileTypes}
+      dropMessageStyle={{ margin: "0  0.5rem" }}
+      style={{ position: "relative" }}>
+      <div className="d-flex align-items-center justify-content-center w-100 ">
+        <label
+          htmlFor="dropzone-file"
+          className="d-flex flex-column align-items-center justify-content-center w-100  rounded cursor-pointer bg-light"
+          style={{ height: "6rem" }}>
+          <div
+            className="d-flex flex-column align-items-center justify-content-center pt-3 pb-3"
+            style={{
+              fontSize: "0.6rem",
+            }}>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="20"
+              height="20"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.5"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              class="lucide lucide-cloud-upload-icon lucide-cloud-upload">
+              <path d="M12 13v8" />
+              <path d="M4 14.899A7 7 0 1 1 15.71 8h1.79a4.5 4.5 0 0 1 2.5 8.242" />
+              <path d="m8 17 4-4 4 4" />
+            </svg>
+            <p className="mb-2 text-muted small">
+              <strong>Click Untuk upload</strong> atau drag and drop
+            </p>
+            <p className="text-muted small">PDF (MAX. 3 Mb)</p>
+          </div>
+        </label>
+      </div>
+    </FileUploader>
   );
 };
 

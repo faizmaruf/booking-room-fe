@@ -165,7 +165,7 @@ export const updateBooking = (id, data) => {
     try {
       const response = await showToast(authorizedAxios.put(`${BASE_URL}/bookings/${id}`, data), {
         loading: "Mengupdate data...",
-        success: "Data role berhasil diupdate!",
+        success: "Data booking berhasil diupdate!",
         error: (err) => err?.response?.data?.message || "Gagal mengupdate data!",
       });
       if (response.status === 200 || response.status === 201) {
@@ -190,7 +190,7 @@ export const deleteBooking = (id) => {
     try {
       const response = await showToast(authorizedAxios.delete(`${BASE_URL}/bookings/${id}`), {
         loading: "loading data...",
-        success: "Data role berhasil dihapus!",
+        success: "Data booking berhasil dihapus!",
         error: (err) => err?.response?.data?.message || "Gagal loading data!",
       });
       if (response.status === 200 || response.status === 201) {

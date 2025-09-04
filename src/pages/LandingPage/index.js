@@ -319,7 +319,7 @@ const LandingPage = (props) => {
                     />
                   </div>
                   <div className="col-md-6">
-                    <label className="form-label">Tipe Kamar</label>
+                    <label className="form-label">Ruangan</label>
                     <div class="input-icon">
                       <span
                         className="input-icon-addon"
