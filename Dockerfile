@@ -21,16 +21,16 @@ RUN PUBLIC_URL=/ npm run build
 # Stage 2: Serve React build pakai Nginx
 FROM nginx:stable-alpine
 
-# Ubah listen port ke 8889
-RUN sed -i 's/listen       80;/listen       80;/' /etc/nginx/conf.d/default.conf
-
 # Copy hasil build React ke folder Nginx
 COPY --from=build /app/build /usr/share/nginx/html
 
-# Set server_name catch-all
+# Set server_name catch-all (semua request diterima)
 RUN sed -i 's/server_name  localhost;/server_name _;/' /etc/nginx/conf.d/default.conf
 
-# Expose port 80
+# Pastikan Nginx listen di port 80 internal container
+RUN sed -i 's/listen       80;/listen       80;/' /etc/nginx/conf.d/default.conf
+
+# Expose port 80 (internal container)
 EXPOSE 80
 
 # Start Nginx
