@@ -16,7 +16,7 @@ RUN npm install ajv@8 ajv-keywords@5 --legacy-peer-deps
 COPY . .
 
 # Build React
-RUN npm run build
+RUN PUBLIC_URL=/ npm run build
 
 # Stage 2: Serve React build pakai Nginx
 FROM nginx:stable-alpine
@@ -27,6 +27,11 @@ RUN sed -i 's/listen       80;/listen       8889;/' /etc/nginx/conf.d/default.co
 # Copy hasil build React ke folder Nginx
 COPY --from=build /app/build /usr/share/nginx/html
 
+# Set server_name catch-all
+RUN sed -i 's/server_name  localhost;/server_name _;/' /etc/nginx/conf.d/default.conf
+
+# Expose port 8889
 EXPOSE 8889
 
+# Start Nginx
 CMD ["nginx", "-g", "daemon off;"]
