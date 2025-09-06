@@ -5,7 +5,7 @@ services:
     build: .
     container_name: booking-room-fe-app-1
     ports:
-      - "8889:8889"
+      - "8889:80"
     networks:
       - booking-room-be_default # gunakan network yang sudah ada
 
