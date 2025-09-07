@@ -5,7 +5,7 @@ services:
     build: .
     container_name: booking-room-fe-app-1
     ports:
-      - "8889:80"
+      - "8889:8889"
     networks:
       - npm_default # network internal dengan Nginx Proxy Manager
 
