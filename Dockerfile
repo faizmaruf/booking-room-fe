@@ -24,9 +24,16 @@ FROM nginx:stable-alpine
 # Copy hasil build React ke folder Nginx
 COPY --from=build /app/build /usr/share/nginx/html
 
-# Hapus default.conf bawaan, ganti dengan custom untuk SPA
-RUN rm /etc/nginx/conf.d/default.conf
-COPY nginx.conf /etc/nginx/conf.d/default.conf
+# Overwrite default.conf langsung (SPA support)
+RUN echo 'server { \
+    listen 80; \
+    server_name _; \
+    root /usr/share/nginx/html; \
+    index index.html; \
+    location / { \
+        try_files $uri /index.html; \
+    } \
+}' > /etc/nginx/conf.d/default.conf
 
 # Expose port 80
 EXPOSE 80
