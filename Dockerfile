@@ -1,5 +1,5 @@
 # Stage 1: Build React app
-FROM node:18 as build
+FROM node:18 AS build
 
 WORKDIR /app
 
@@ -18,20 +18,17 @@ COPY . .
 # Build React
 RUN PUBLIC_URL=/ npm run build
 
-# Stage 2: Serve React build pakai Nginx
+# Stage 2: Serve React build dengan Nginx
 FROM nginx:stable-alpine
-
-# Ubah listen port ke 8889
-RUN sed -i 's/listen       80;/listen       8889;/' /etc/nginx/conf.d/default.conf
 
 # Copy hasil build React ke folder Nginx
 COPY --from=build /app/build /usr/share/nginx/html
 
-# Set server_name catch-all
-RUN sed -i 's/server_name  localhost;/server_name _;/' /etc/nginx/conf.d/default.conf
+# Hapus default.conf bawaan, ganti dengan custom untuk SPA
+RUN rm /etc/nginx/conf.d/default.conf
+COPY nginx.conf /etc/nginx/conf.d/default.conf
 
-# Expose port 8889
-EXPOSE 8889
+# Expose port 80
+EXPOSE 80
 
-# Start Nginx
 CMD ["nginx", "-g", "daemon off;"]
