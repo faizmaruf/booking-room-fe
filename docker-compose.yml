@@ -11,5 +11,5 @@ services:
       - nginx-proxy-manager_default # biar bisa diakses oleh Nginx Proxy Manager
 
 networks:
-  npm_default:
+  nginx-proxy-manager_default:
     external: true
