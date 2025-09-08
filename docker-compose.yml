@@ -4,11 +4,12 @@ services:
   frontend:
     build: .
     container_name: booking-room-fe-app-1
-    ports:
-      - "8889:8889"
+    # jangan expose ke luar, cukup internal
+    expose:
+      - "80"
     networks:
-      - npm_default # network internal dengan Nginx Proxy Manager
+      - nginx-proxy-manager_default # biar bisa diakses oleh Nginx Proxy Manager
 
 networks:
   npm_default:
-    external: true # gunakan network default NPM
+    external: true
